@@ -1,0 +1,75 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:react/jsx-runtime",
+    "plugin:@next/next/recommended",
+    "prettier"
+  ],
+  "plugins": ["import"],
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "no-alert": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "unknown",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "index"
+        ],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": true
+      }
+    ],
+    "import/newline-after-import": "error",
+    "no-param-reassign": ["error", { "props": false }]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "rules": {
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          { "ts": "never", "tsx": "never" }
+        ],
+        "react/jsx-props-no-spreading": "off",
+        "react/prop-types": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "react/function-component-definition": "off",
+        "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+        "react/jsx-no-useless-fragment": [
+          "error",
+          { "allowExpressions": true }
+        ],
+        "jsx-a11y/label-has-associated-control": [0],
+        "arrow-body-style": "off",
+        "no-unused-vars": "off",
+        "react/require-default-props": "off",
+        "import/prefer-default-export": "off",
+        "no-undef": "off",
+        "no-param-reassign": [
+          "error",
+          {
+            "props": false
+          }
+        ],
+        "jsx-a11y/anchor-is-valid": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "ignorePatterns": ["**/test.tsx"],
+}

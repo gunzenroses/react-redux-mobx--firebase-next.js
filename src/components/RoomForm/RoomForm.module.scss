@@ -1,0 +1,83 @@
+@import 'scss/utils/vars.scss';
+@import 'scss/utils/font-template.scss';
+
+.roomForm {
+  max-width: 380px;
+  width: 100%;
+  height: 512px;
+  background: $colorBackground;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  @media (max-width: $widthPhone) {
+    height: fit-content;
+  }
+
+  &__inner {
+    margin: 39px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (max-width: $widthPhone) {
+      width: 90%;
+      margin: 0 auto;
+      padding: 30px 5%;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &Info {
+      font-weight: bold;
+    }
+
+    &Sign {
+      font-size: 14px;
+      padding-right: 3px;
+    }
+
+    &Number {
+      font-size: 24px;
+    }
+
+    &Type {
+      @extend %label-text;
+      color: $colorBrandMain;
+      margin-left: 8px;
+    }
+
+    &Price {
+      @extend %body-text;
+      color: $dark-shade-50;
+    }
+
+    &Cost {
+      line-height: 23px;
+      margin-left: 4px;
+    }
+
+    &Period {
+      font-size: $fontSizeLabel;
+    }
+  }
+
+  &__guests {
+    &Title {
+      @extend %label-text;
+      text-transform: uppercase;
+      margin: 0px;
+      padding-bottom: 6px;
+    }
+  }
+
+  &__alert {
+    @extend %body-text;
+    padding: 30px;
+  }
+}

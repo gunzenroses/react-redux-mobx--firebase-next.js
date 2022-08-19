@@ -1,0 +1,18 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  width: fit-content;
+  height: 21px;
+  margin: 0 19px 0 0;
+  padding: 0;
+  letter-spacing: 0.003em;
+}
+
+.languageSwitcher {
+  list-style-type: none;
+  margin-left: 18px;
+}

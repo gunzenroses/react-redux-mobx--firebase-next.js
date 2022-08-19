@@ -1,0 +1,31 @@
+.authentication {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  width: 303px;
+  height: 34px;
+  &_inBurger {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: initial;
+    gap: 10px;
+    padding: 10px 0;
+    width: 280px;
+  }
+
+  &__signIn {
+    display: block;
+    height: 34px;
+    line-height: 30px;
+  }
+
+  &__registration {
+    display: block;
+    width: 197px;
+    height: 34px;
+    line-height: 34px;
+  }
+}

@@ -1,0 +1,52 @@
+@import 'scss/utils/font-template.scss';
+@import 'scss/utils/vars.scss';
+
+.radioButton {
+  @extend %body-text;
+  display: inline-flex;
+  column-gap: 10px;
+  cursor: pointer;
+
+  &__inputWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__control {
+    display: none;
+  }
+
+  &__border {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid $dark-shade-25;
+
+    &_active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-color: $colorBrandMain;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: $gradientMain;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__text {
+    color: $dark-shade-50;
+    line-height: $lineHeightMain;
+    user-select: none;
+
+    &_active {
+      color: $dark-shade-75;
+    }
+  }
+}

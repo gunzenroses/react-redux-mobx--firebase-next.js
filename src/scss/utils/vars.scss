@@ -1,0 +1,36 @@
+// Font
+$fontMain: 'Montserrat', Helvetica, Arial, sans-serif;
+
+// Size
+$colorFontMain: #101010;
+$fontSizeMain: 0.875rem; //14px
+$fontSizeLabel: 0.75rem; //12px
+$fontSizeTitle: 1.188rem; //19px
+$fontSizeSubSection: 1.5rem; //24px
+$fontWeightMain: 400;
+$fontWeightBold: 700;
+$lineHeightSmall: 1.16;
+$lineHeightSecond: 1.21;
+$lineHeightMain: 1.25;
+$lineHeightLarge: 1.7;
+
+$widthDesktop: 1280px;
+$widthSmDesktop: 980px;
+$widthTablet: 768px;
+$widthPhone: 480px;
+$widthSmPhone: 320px;
+
+// Colors
+
+$dark-shade-100: #1f2041;
+$dark-shade-75: rgba(31, 32, 65, 0.75);
+$dark-shade-50: rgba(31, 32, 65, 0.5);
+$dark-shade-25: rgba(31, 32, 65, 0.25);
+$dark-shade-10: rgba(31, 32, 65, 0.1);
+$dark-shade-5: rgba(31, 32, 65, 0.05);
+$colorBrandMain: #bc9cff;
+$colorBrandSecond: #6fcf97;
+$colorBurger: #dbdcd2;
+$gradientMain: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$gradientSecondary: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+$colorBackground: #ffffff;

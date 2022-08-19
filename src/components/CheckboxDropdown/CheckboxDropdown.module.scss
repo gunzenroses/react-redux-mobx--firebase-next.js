@@ -1,0 +1,39 @@
+@import 'scss/utils/vars.scss';
+@import 'scss/utils/font-template.scss';
+
+.CheckboxDropdown {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  position: relative;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+    cursor: pointer;
+  }
+
+  &__titleText {
+    @extend %label-text;
+  }
+
+  &__titleIcon {
+    height: 20px;
+    color: $dark-shade-50;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    position: absolute;
+    top: 29px;
+    left: -6px;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+  }
+}

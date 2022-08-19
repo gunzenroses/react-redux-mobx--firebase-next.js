@@ -1,0 +1,46 @@
+@import 'scss/utils/vars';
+
+.burgerAccordion {
+  &__title {
+    border-top: 1px solid $colorBurger;
+    overflow: hidden;
+    padding: 1rem;
+    cursor: pointer;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      color: lighten($colorFontMain, 30%);
+      background-color: $dark-shade-10;
+    }
+
+    &Chevron {
+      position: relative;
+      right: 10px;
+      top: 10px;
+      margin-left: 25px;
+      transition: all 0.2s;
+      transform: translateY(-50%) rotate(0);
+    }
+
+    &_active {
+      & .burgerAccordion__titleChevron {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+    list-style: none;
+
+    &_active {
+      display: block;
+    }
+  }
+}

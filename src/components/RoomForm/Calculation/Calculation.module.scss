@@ -1,0 +1,60 @@
+@import 'scss/utils/vars.scss';
+@import 'scss/utils/font-template.scss';
+
+.calculation {
+  &__inner {
+    @extend %body-text;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 20px 80px;
+    line-height: 18px;
+    align-items: baseline;
+
+    &_withoutInfo {
+      grid-template-columns: 1fr 80px;
+    }
+  }
+
+  &__info {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid $dark-shade-25;
+    box-sizing: border-box;
+    margin: 0 auto;
+    line-height: $lineHeightMain;
+    text-align: center;
+    color: $dark-shade-25;
+    background-color: $colorBackground;
+    cursor: pointer;
+
+    &Text {
+      @extend %body-text;
+      font-size: $fontSizeLabel;
+      text-align: center;
+    }
+  }
+
+  &__cost {
+    text-align: right;
+  }
+
+  &__total {
+    @extend %widget-text;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 31px;
+
+    &Dots {
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px dashed $dark-shade-25;
+    }
+  }
+}

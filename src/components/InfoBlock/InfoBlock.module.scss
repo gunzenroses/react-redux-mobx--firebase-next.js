@@ -1,0 +1,11 @@
+@import 'scss/utils/font-template.scss';
+
+.title {
+  @extend %widget-text;
+  margin: 0;
+}
+
+.text {
+  @extend %body-text;
+  margin: 20px 0 0;
+}

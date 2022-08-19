@@ -1,0 +1,82 @@
+@import 'scss/utils/vars.scss';
+
+.header {
+  width: 100%;
+  height: fit-content;
+  border-radius: 4px;
+  background: $colorBackground;
+  box-shadow: 0 10px 20px $dark-shade-5;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+    max-width: 1160px;
+    min-width: 320px;
+    height: 70px;
+    margin: 0 auto;
+    padding-top: 12px;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+
+    @media (max-width: $widthDesktop) {
+      padding: 0 5px;
+    }
+  }
+
+  &__logo {
+    margin-top: 2px;
+  }
+
+  &__menu {
+    top: 2px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    width: fit-content;
+    height: 34px;
+    margin-left: 20px;
+    color: $dark-shade-50;
+
+    @media (max-width: $widthTablet) {
+      margin-left: 10px;
+    }
+  }
+
+  &__navbar {
+    height: 21px;
+    margin-right: 21px;
+
+    @media (max-width: $widthSmDesktop) {
+      display: none;
+    }
+  }
+
+  &__userMenu {
+    @media (max-width: $widthTablet) {
+      display: none;
+    }
+  }
+
+  &__burgerMenu {
+    display: none;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    z-index: 5;
+
+    @media (max-width: $widthSmDesktop) {
+      display: block;
+    }
+  }
+}

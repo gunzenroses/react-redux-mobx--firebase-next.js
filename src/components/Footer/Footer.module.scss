@@ -1,0 +1,11 @@
+@import 'scss/utils/vars';
+@import 'scss/utils/font-template';
+
+.footer {
+  display: grid;
+  grid-template-rows: 373px 70px;
+
+  @media screen and (max-width: $widthTablet) {
+    grid-template-rows: 367px;
+  }
+}

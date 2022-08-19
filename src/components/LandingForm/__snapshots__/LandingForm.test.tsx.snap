@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign-in page Landing form snapshot 1`] = `
+<div>
+  <form
+    class="landingForm"
+  >
+    <p
+      class="landingForm__title"
+    >
+      title
+    </p>
+    <div
+      class="landingForm__calendarWrapper"
+    >
+      <div
+        class="calendar"
+      >
+        <div
+          class="wrapper"
+        >
+          <label
+            class="label"
+          >
+            labelFirstTwin
+            <input
+              class="input"
+              placeholder="placeholderTwin"
+              readonly=""
+              type="text"
+            />
+            <svg
+              class="expandIcon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+              />
+            </svg>
+          </label>
+          <label
+            class="label"
+          >
+            labelSecond
+            <input
+              class="input"
+              placeholder="placeholderTwin"
+              readonly=""
+              type="text"
+            />
+            <svg
+              class="expandIcon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+              />
+            </svg>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      class="landingForm__dropdownWrapper"
+    >
+      <div
+        class="roomDropdown"
+      >
+        <p
+          class="roomDropdown__title"
+        >
+          guestsTitle
+        </p>
+        <div
+          class="roomDropdownInput"
+          role="button"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <input
+              class="input input_isReadonly"
+              name=""
+              placeholder="Email"
+              readonly=""
+              type="text"
+              value="defaultGuests"
+            />
+          </div>
+          <span
+            class="roomDropdownInput__iconWrapper"
+          >
+            <svg
+              class="roomDropdownInput__icon"
+              fill="none"
+              height="20px"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="20px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polyline
+                points="6 9 12 15 18 9"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button
+        class="button button_type_submit"
+        type="submit"
+      >
+        <span
+          class="button__icon"
+        >
+          <svg
+            fill="currentColor"
+            height="24px"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="24px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+            />
+          </svg>
+        </span>
+        <span
+          class="button_type_signInText"
+        >
+          button
+        </span>
+      </button>
+    </div>
+  </form>
+</div>
+`;

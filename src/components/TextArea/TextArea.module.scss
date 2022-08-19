@@ -1,0 +1,20 @@
+@import 'scss/utils/vars';
+@import 'scss/utils/font-template';
+
+.textarea {
+  resize: none;
+  max-width: 712px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  height: 120px;
+
+  &__title {
+    @extend %widget-text;
+  }
+
+  &__wrapper {
+  }
+}

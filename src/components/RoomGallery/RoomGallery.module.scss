@@ -1,0 +1,58 @@
+.roomGallery {
+  &__photos {
+    display: flex;
+    position: relative;
+    height: 33.7vw;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__bigPhoto {
+    width: 68.12%;
+    position: relative;
+  }
+
+  &__smallPhotos {
+    display: flex;
+    width: 31.9%;
+    flex-direction: column;
+
+    &Item {
+      height: 50%;
+      position: relative;
+    }
+  }
+
+  &__carousel {
+    display: none;
+    position: relative;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+
+    &Photo {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__mainPhoto {
+    width: 68.1%;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__bottomPhoto,
+  &__topPhoto {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  :global .carousel img {
+    width: 100%;
+  }
+}

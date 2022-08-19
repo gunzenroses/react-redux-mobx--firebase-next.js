@@ -1,0 +1,1625 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 2,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 3,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 4,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 5,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 6,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 7,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 8,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 9,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 10,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 11,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 12,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 13,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 14,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 15,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 16,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 17,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 18,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 19,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 20,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 21,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 22,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 23,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 24,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 25,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 26,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 27,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 28,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 29,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 30,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 31,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 32,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 33,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 34,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 35,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 36,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 37,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 38,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 39,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 40,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 41,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 42,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 43,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 44,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 45,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 46,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 47,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 48,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 49,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 50,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 51,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 52,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 53,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 54,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 55,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 56,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 57,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 58,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 59,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 60,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 61,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 62,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 63,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 64,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 65,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 66,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 67,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 68,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 69,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 70,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 71,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 72,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 73,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 74,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 75,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 76,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 77,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 78,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 79,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 80,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 81,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 82,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 83,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 84,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 85,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 86,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 87,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 88,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 89,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 90,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 91,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 92,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 93,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 94,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 95,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 96,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 97,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 98,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 99,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 100,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 101,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 102,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 103,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 104,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 105,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 106,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 107,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 108,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 109,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 110,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 111,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 112,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 113,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 114,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 115,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 116,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 117,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 118,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 119,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 120,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+
+    {
+      "id": 121,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 122,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 123,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 124,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 125,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 126,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 127,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 128,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 129,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 130,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 131,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 132,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 133,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 134,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 135,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 136,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 137,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 138,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 139,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 140,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 141,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 142,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 143,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 144,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 145,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 146,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 147,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 148,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 149,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 150,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 151,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 152,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 153,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 154,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 155,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 156,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 157,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 158,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 159,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 160,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 161,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 162,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 163,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 164,
+      "imgSrc": [],
+      "number": 888,
+      "type": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewsAmount": 145
+    },
+    {
+      "id": 165,
+      "imgSrc": [],
+      "number": 840,
+      "type": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewsAmount": 65
+    },
+    {
+      "id": 166,
+      "imgSrc": [],
+      "number": 980,
+      "type": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewsAmount": 35
+    },
+    {
+      "id": 167,
+      "imgSrc": [],
+      "number": 856,
+      "type": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewsAmount": 19
+    },
+    {
+      "id": 168,
+      "imgSrc": [],
+      "number": 740,
+      "type": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewsAmount": 44
+    },
+    {
+      "id": 169,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 170,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 171,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 172,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 173,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    },
+    {
+      "id": 174,
+      "imgSrc": [],
+      "number": 444,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 15
+    },
+    {
+      "id": 175,
+      "imgSrc": [],
+      "number": 352,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 55
+    },
+    {
+      "id": 176,
+      "imgSrc": [],
+      "number": 982,
+      "type": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewsAmount": 56
+    },
+    {
+      "id": 177,
+      "imgSrc": [],
+      "number": 678,
+      "type": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewsAmount": 45
+    },
+    {
+      "id": 178,
+      "imgSrc": [],
+      "number": 450,
+      "type": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewsAmount": 39
+    },
+    {
+      "id": 179,
+      "imgSrc": [],
+      "number": 350,
+      "type": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewsAmount": 77
+    },
+    {
+      "id": 180,
+      "imgSrc": [],
+      "number": 666,
+      "type": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewsAmount": 25
+    }
+  ]
+}

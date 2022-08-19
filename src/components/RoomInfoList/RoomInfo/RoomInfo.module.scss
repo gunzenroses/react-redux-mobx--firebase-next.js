@@ -1,0 +1,43 @@
+@import 'scss/utils/vars.scss';
+@import 'scss/utils/font-template.scss';
+
+.roomInfo {
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(31 32 65 / 10%);
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+
+  &:first-child {
+    padding-top: 21px;
+  }
+
+  &:last-child {
+    border: none;
+    padding-bottom: 0;
+  }
+
+  &__imgWrapper {
+    max-width: 43px;
+    height: 43px;
+    width: 100%;
+    position: relative;
+  }
+
+  &__content {
+    margin-left: 10px;
+  }
+
+  &__title {
+    @extend %body-text;
+
+    margin: 0;
+    font-weight: bold;
+  }
+
+  &__text {
+    @extend %body-text;
+
+    margin: 0;
+  }
+}

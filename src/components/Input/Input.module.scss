@@ -1,0 +1,98 @@
+@import 'scss/utils/vars';
+@import 'scss/utils/font-template';
+
+.input {
+  @extend %body-text;
+
+  position: relative;
+  z-index: 1;
+  max-width: 320px;
+  height: 44px;
+  width: 100%;
+  padding: 8px 15px;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid $dark-shade-25;
+  background-color: transparent;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: $dark-shade-25;
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid $dark-shade-50;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &_withArrow {
+    padding-right: 44px;
+    max-width: 267px;
+  }
+
+  &_isReadonly {
+    cursor: pointer;
+    padding-right: 44px;
+
+    &::placeholder {
+      color: $dark-shade-75;
+    }
+  }
+
+  &_isOpen {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 1px solid $dark-shade-50;
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 267px;
+  }
+
+  &__button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    z-index: 2;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+
+    &Inner {
+      position: relative;
+      width: 15px;
+      height: 2px;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      display: inline-block;
+      transform: translateY(-4px);
+
+      &::after {
+        top: -3px;
+        transform: rotate(45deg);
+      }
+
+      &::before {
+        top: 3px;
+        transform: rotate(-45deg);
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 2px;
+        right: -2px;
+        background: inherit;
+      }
+    }
+  }
+}

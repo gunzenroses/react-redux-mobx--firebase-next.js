@@ -1,0 +1,32 @@
+{
+  "rejected": "Oops, something went wrong. Our hotel has no data on such a room, try to choose from the available",
+  "roomInfo": "Room information",
+  "roomImpression": {
+    "title": "Room impression",
+    "votes": "votes",
+    "great": "Great",
+    "good": "Good",
+    "satisfactory": "Satisfactory",
+    "disappointed": "Disappointed"
+  },
+  "rules": "Rules",
+  "reviews": {
+    "reviewsTitle": "Reviews from visitors",
+    "review": "reviews",
+    "review_one": "review",
+    "review_many": "reviews",
+    "days": "days",
+    "days_one": "day",
+    "days_few": "days",
+    "days_many": "days",
+    "ago": "ago",
+    "today": "Today"
+  },
+  "cancel": "Cancel",
+  "cancelText": "Free cancellation within 48 hours. Thereafter, if you cancel at least 5 days prior to arrival, you will receive a full refund minus a service charge.",
+  "textArea": {
+    "title": "New comment",
+    "placeHolder": "Your comment",
+    "btnSubmit": "Submit"
+  }
+}

@@ -1,0 +1,59 @@
+@import 'scss/utils/vars';
+@import 'scss/utils/font-template';
+
+.paginationList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__arrow,
+  &__number {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    background: $gradientSecondary;
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__number {
+    line-height: 40px;
+    color: $dark-shade-50;
+    font-size: $fontSizeLabel;
+    background: transparent;
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+
+    @media screen and (max-width: $widthPhone) {
+      width: 30px;
+    }
+
+    &_current {
+      border-radius: 22px;
+      background: $gradientMain;
+      font-weight: $fontWeightBold;
+      color: $colorBackground;
+
+      @media screen and (max-width: $widthPhone) {
+        width: 40px;
+      }
+    }
+  }
+
+  &__icon {
+    color: $colorBackground;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

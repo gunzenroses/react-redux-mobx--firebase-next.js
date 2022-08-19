@@ -1,0 +1,93 @@
+@import 'scss/utils/font-template';
+
+.userPersonalItem {
+  @extend %body-text;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 44px;
+  margin: 0;
+  justify-content: space-between;
+  column-gap: 10px;
+
+  &__label,
+  &__textWrapper {
+    @extend %body-text;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 44px;
+    margin: 0;
+    justify-content: space-between;
+  }
+
+  &__textWrapper {
+    column-gap: 10px;
+
+    @media screen and (max-width: $widthTablet) {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__text {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    @media screen and (max-width: $widthTablet) {
+      justify-content: start;
+    }
+  }
+
+  &__label {
+    max-width: 30%;
+    min-height: 44px;
+    line-height: 16px;
+    color: $dark-shade-100;
+
+    @media screen and (max-width: $widthTablet) {
+      max-width: 100%;
+      min-height: 25px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 0;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  &__control {
+    display: flex;
+    column-gap: 10px;
+    height: 100%;
+    align-items: center;
+
+    @media screen and (max-width: $widthTablet) {
+      align-items: flex-end;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__buttonIcon {
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      color: $colorBrandMain;
+    }
+  }
+}

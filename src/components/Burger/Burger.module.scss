@@ -1,0 +1,43 @@
+@import 'scss/utils/vars';
+
+.burger {
+  &__icon {
+    font-size: 2rem;
+    color: $colorBrandMain;
+    cursor: pointer;
+  }
+
+  &__content {
+    padding: 0;
+    margin: 0;
+    right: 0;
+    list-style: none;
+    background: $colorBackground;
+    box-shadow: 0 5px 10px 0 $dark-shade-25;
+    width: fit-content;
+    position: absolute;
+    transition: all 0.4s;
+    display: block;
+
+    &Wrapper {
+      position: relative;
+      max-width: 450px;
+    }
+
+    &Buttons {
+      display: none;
+      padding: 5px;
+      gap: 10px;
+
+      @media (max-width: $widthTablet) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  &__langSwitcher {
+    width: max-content;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}

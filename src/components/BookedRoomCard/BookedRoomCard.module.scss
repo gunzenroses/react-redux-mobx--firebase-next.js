@@ -1,0 +1,30 @@
+@import 'scss/utils/font-template.scss';
+@import 'scss/utils/vars.scss';
+
+.container {
+  max-width: 270px;
+}
+
+.info {
+  background-color: $colorBackground;
+  box-shadow: 0 10px 20px rgb(31 32 65 / 5%);
+  padding: 15px 20px;
+}
+
+.title {
+  @extend %label-text;
+  margin: 0 0 15px;
+}
+
+.text {
+  @extend %body-text;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancelButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

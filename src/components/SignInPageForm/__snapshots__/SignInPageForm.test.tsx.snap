@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign-in page Sign in snapshot 1`] = `
+<div>
+  <form
+    class="signInPageForm"
+  >
+    <div
+      class="signInPageForm__inner"
+    >
+      <h2
+        class="signInPageForm__title"
+      >
+        title
+      </h2>
+      <div
+        class="signInPageForm__input"
+      >
+        <div
+          class=""
+        >
+          <input
+            class="input"
+            name=""
+            placeholder="Email"
+            type="email"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="signInPageForm__input"
+      >
+        <div
+          class=""
+        >
+          <input
+            class="input"
+            name=""
+            placeholder="password"
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="signInPageForm__button"
+      >
+        <button
+          class="button button_type_submit"
+          type="submit"
+        >
+          <span
+            class="button__icon"
+          >
+            <svg
+              fill="currentColor"
+              height="24px"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+              />
+            </svg>
+          </span>
+          <span
+            class="button_type_signInText"
+          >
+            buttonSignIn
+          </span>
+        </button>
+      </div>
+      <div
+        class="signInPageForm__direction"
+      >
+        <p
+          class="signInPageForm__text"
+        >
+          account
+        </p>
+        <div
+          class="signInPageForm__link"
+        >
+          <a
+            class="button button_type_signIn button_in_authorization"
+            href="/Registration"
+          >
+            <span
+              class="button_type_signInText"
+            >
+              buttonSignUp
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

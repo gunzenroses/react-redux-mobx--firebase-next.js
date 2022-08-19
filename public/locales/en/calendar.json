@@ -1,0 +1,9 @@
+{
+  "btnApply": "apply",
+  "btnClear": "clear",
+  "labelFirstTwin": "arrival",
+  "labelFirstSingle": "dates of stay",
+  "placeholderTwin": "MM.DD.YYYY",
+  "placeholderSingle": "MM.DD - MM.DD",
+  "labelSecond": "departure"
+}

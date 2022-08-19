@@ -1,0 +1,15 @@
+{
+  "title": "Регистрация аккаунта",
+  "name": "Имя",
+  "surname": "Фамилия",
+  "male": "Мужчина",
+  "female": "Женщина",
+  "birthday": "дата рождения",
+  "birthdayPlaceholder": "ДД.ММ.ГГГГ",
+  "loginInformation": "данные для входа в сервис",
+  "password": "Пароль",
+  "specOffers": "Получать спецпредложения",
+  "buttonSignUp": "Зарегистрироваться",
+  "buttonSignIn": "Войти",
+  "login": "Уже есть аккаунт на Toxin"
+}

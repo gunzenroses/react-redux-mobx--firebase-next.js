@@ -1,0 +1,102 @@
+@import 'scss/utils/font-template.scss';
+@import 'scss/utils/vars.scss';
+
+.title {
+  margin: 0 0 20px;
+  @extend %widget-text;
+}
+
+.figure {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 27px;
+  margin: 0;
+  max-width: max-content;
+
+  @media (max-width: $widthPhone) {
+    column-gap: 10px;
+  }
+}
+
+.chart {
+  transform: rotate(90deg) scaleX(-1);
+
+  @media (max-width: $widthPhone) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.unit {
+  fill: none;
+  stroke-width: 1;
+  animation-name: render;
+  animation-duration: 1.5s;
+  transition-property: all;
+  transition-duration: 1.5s;
+}
+
+@keyframes render {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.text {
+  font-weight: $fontWeightBold;
+  font-family: $fontMain;
+  fill: $colorBrandMain;
+  transform: rotate(-90deg) scaleY(-1);
+}
+
+.sum {
+  text-anchor: middle;
+  font-size: 0.412rem;
+  line-height: 1.2;
+}
+
+.votes {
+  text-anchor: middle;
+  font-size: 0.21rem;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.legend {
+  @extend %body-text;
+  align-self: end;
+}
+
+.list {
+  display: grid;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+$colors: '1' linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%),
+  '2' linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%),
+  '3' linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%),
+  '4' linear-gradient(180deg, #919191 0%, #3d4975 100%);
+
+.listItem {
+  position: relative;
+  padding-left: 15px;
+
+  &::before {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translateY(50%);
+    content: '';
+  }
+
+  @each $idx, $color in $colors {
+    &:nth-child(#{$idx})::before {
+      background: $color;
+    }
+  }
+}

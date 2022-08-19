@@ -1,0 +1,43 @@
+@import 'scss/utils/font-template';
+@import 'scss/utils/vars';
+
+.landing {
+  background-image: url('/assets/images/backgrounds/landingBackground.jpg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 70px;
+  padding-bottom: 386px;
+
+  @media (max-width: $widthSmDesktop) {
+    height: 560px;
+    padding: 10px 0 30px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__inner {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1170px;
+    padding-left: 5px;
+
+    @media (max-width: $widthSmDesktop) {
+      padding: 0 5px;
+    }
+  }
+
+  &__text {
+    @extend %body-text;
+
+    position: absolute;
+    max-width: 300px;
+    text-align: right;
+    right: 0;
+    bottom: -367px;
+
+    @media (max-width: $widthSmDesktop) {
+      display: none;
+    }
+  }
+}

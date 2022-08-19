@@ -1,0 +1,47 @@
+@import 'scss/utils/font-template.scss';
+@import 'scss/utils/vars.scss';
+
+.toggle {
+  @extend %body-text;
+  line-height: $lineHeightMain;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+
+  &__inputWrapper {
+    display: flex;
+  }
+
+  &__control {
+    display: none;
+  }
+
+  &__border {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 3px;
+    height: 20px;
+    width: 40px;
+    border: 1px solid $dark-shade-25;
+    border-radius: 10px;
+
+    &:before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $dark-shade-25;
+    }
+
+    &_active {
+      border-color: $colorBrandMain;
+      justify-content: end;
+
+      &:before {
+        background: $gradientMain;
+      }
+    }
+  }
+}

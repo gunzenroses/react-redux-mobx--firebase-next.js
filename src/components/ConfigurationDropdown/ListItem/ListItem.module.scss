@@ -1,0 +1,48 @@
+@import 'scss/utils/font-template';
+@import 'scss/utils/vars';
+
+.roomDropdownListItem {
+  display: flex;
+  justify-content: space-between;
+
+  &__text {
+    max-width: 65%;
+    display: flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  &__calc {
+    display: flex;
+    column-gap: 1px;
+  }
+
+  &__output,
+  &__calcButton {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+  }
+
+  &__calcButton {
+    background: none;
+    border: 1px solid $dark-shade-25;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $dark-shade-75;
+    }
+
+    &_disabled {
+      opacity: 0.25;
+
+      &:hover {
+        border-color: $dark-shade-25;
+      }
+    }
+  }
+}

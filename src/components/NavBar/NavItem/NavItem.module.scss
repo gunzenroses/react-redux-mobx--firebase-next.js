@@ -1,0 +1,99 @@
+@import 'scss/utils/vars.scss';
+
+.navLink {
+  display: inline-block;
+  position: relative;
+  height: fit-content;
+  min-height: 21px;
+  line-height: 20px;
+  font-size: $fontSizeMain;
+  font-weight: $fontWeightMain;
+  color: $dark-shade-50;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+
+  & + .navLink {
+    margin-left: 18px;
+  }
+
+  &_type_dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    margin-right: 2px;
+  }
+
+  &__button {
+    display: inline-block;
+    position: relative;
+    line-height: 20px;
+    font-size: $fontSizeMain;
+    font-weight: $fontWeightMain;
+    color: $dark-shade-50;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &::before {
+      content: attr(title);
+      display: block;
+      height: 0;
+      font-weight: $fontWeightBold;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    &:hover {
+      font-weight: $fontWeightBold;
+    }
+
+    &_type_active {
+      font-weight: $fontWeightBold;
+    }
+  }
+
+  &__dropdown {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    height: 21px;
+    line-height: 20px;
+    font-size: $fontSizeMain;
+    font-weight: $fontWeightMain;
+    color: $dark-shade-50;
+  }
+
+  &__content {
+    position: absolute;
+    top: 44px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    min-width: 100%;
+    height: fit-content;
+    padding: 0;
+    border-radius: 4px;
+    background: $colorBackground;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px $dark-shade-5;
+    z-index: 3;
+  }
+
+  &__contentLink {
+    padding: 15px;
+    list-style: none;
+
+    &:hover {
+      background: $dark-shade-10;
+    }
+  }
+
+  &__icon:hover ~ &__button {
+    font-weight: $fontWeightBold;
+  }
+}

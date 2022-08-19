@@ -1,0 +1,72 @@
+@import 'scss/utils/vars.scss';
+@import 'scss/utils/font-template.scss';
+
+.checkbox {
+  @extend %body-text;
+  max-width: max-content;
+  color: $dark-shade-50;
+  display: flex;
+  column-gap: 10px;
+  cursor: pointer;
+  line-height: 20px;
+
+  &__textWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+
+    &_length_short {
+      max-width: 200px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    color: $dark-shade-75;
+  }
+
+  &__control {
+    display: none;
+  }
+
+  &__border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    user-select: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+    border: 1px solid $dark-shade-25;
+
+    &_active {
+      border-color: $colorBrandMain;
+
+      &:before {
+        content: url('../../assets/images/interactiveIcon/checked.svg');
+      }
+    }
+  }
+
+  &__title + &__text {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &:hover &__title {
+    color: $dark-shade-100;
+  }
+
+  &:hover &__text {
+    color: $dark-shade-75;
+  }
+
+  &:hover &__border {
+    box-shadow: 0 0 3px $dark-shade-75;
+
+    &_active {
+      box-shadow: 0 0 3px $colorBrandMain;
+    }
+  }
+}

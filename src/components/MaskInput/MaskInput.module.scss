@@ -1,0 +1,26 @@
+@import 'scss/utils/vars';
+@import 'scss/utils/font-template';
+
+.inputMask {
+  @extend %body-text;
+  max-width: 320px;
+  height: 44px;
+  width: 100%;
+  padding: 8px 15px;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid $dark-shade-25;
+  background-color: transparent;
+  text-overflow: ellipsis;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: $dark-shade-25;
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid $dark-shade-50;
+  }
+}

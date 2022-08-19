@@ -1,0 +1,57 @@
+@import 'scss/utils/vars';
+@import 'scss/utils/font-template';
+
+.sidebar {
+  max-width: 266px;
+
+  &__calendar {
+    margin-bottom: 20px;
+  }
+
+  &__subTitle {
+    @extend %label-text;
+    margin: 0 0 16px;
+  }
+
+  &__range,
+  &__guests,
+  &__rules,
+  &__accessibility {
+    margin-bottom: 30px;
+  }
+
+  &__roomConfig {
+    margin-bottom: 27px;
+    z-index: 4;
+  }
+
+  &__rulesContainer,
+  &__accessibilityContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10.5px;
+    max-width: 225px;
+  }
+
+  &__accessibilityContainer {
+    row-gap: 7px;
+    max-width: 260px;
+  }
+
+  @media (max-width: $widthSmDesktop) {
+    display: grid;
+    max-width: 100%;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 266px);
+    grid-template-rows: 1fr;
+    grid-column-gap: 15px;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 266px);
+  }
+
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(1, 266px);
+  }
+}

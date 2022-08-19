@@ -1,0 +1,16 @@
+{
+  "luxury": "Luxury",
+  "perDay": "per day",
+  "bookBtn": "book",
+  "successBook": "Your room is successfully booked",
+  "rejectBook": "You need to be logged in to book a room",
+  "day": "days",
+  "day_one": "day",
+  "day_many": "days",
+  "discount": "discount",
+  "charge": "Charges for services",
+  "additionalCharge": "Charges for additional services",
+  "infoFirst": "Available by the end of the month",
+  "infoSecond": "Includes compulsory insurance",
+  "total": "Total"
+}

@@ -1,0 +1,38 @@
+@import './vars.scss';
+
+%sub-section-title {
+  color: $dark-shade-100;
+  font-weight: $fontWeightBold;
+  font-size: $fontSizeSubSection;
+  font-family: $fontMain;
+  font-style: normal;
+  line-height: $lineHeightSecond;
+}
+
+%widget-text {
+  color: $dark-shade-100;
+  font-weight: $fontWeightBold;
+  font-size: $fontSizeTitle;
+  font-family: $fontMain;
+  font-style: normal;
+  line-height: $lineHeightSecond;
+}
+
+%label-text {
+  color: $dark-shade-100;
+  font-weight: $fontWeightBold;
+  font-size: $fontSizeLabel;
+  font-family: $fontMain;
+  font-style: normal;
+  line-height: $lineHeightMain;
+  text-transform: uppercase;
+}
+
+%body-text {
+  color: $dark-shade-75;
+  font-weight: $fontWeightMain;
+  font-size: $fontSizeMain;
+  font-family: $fontMain;
+  font-style: normal;
+  line-height: $lineHeightLarge;
+}

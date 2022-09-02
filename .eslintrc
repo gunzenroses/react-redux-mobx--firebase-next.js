@@ -9,7 +9,7 @@
   ],
   "plugins": ["import"],
   "rules": {
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["warning", "windows"],
     "no-alert": "off",
     "import/order": [
       "error",

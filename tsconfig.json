@@ -25,7 +25,7 @@
   "ts-node": {
     "esm": true
   },
-  "include": ["src", "__tests__"],
+  "include": ["src"],
   "exclude": ["src/types"],
   "files": ["src/types/types.d.ts"]
 }

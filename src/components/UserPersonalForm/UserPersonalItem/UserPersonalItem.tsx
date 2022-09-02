@@ -1,11 +1,11 @@
 import React, { FC, FormEvent, useEffect, useState } from 'react';
 import { FaRegCheckCircle } from 'react-icons/fa';
 import { FiEdit } from 'react-icons/fi';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 
-import { Input, RadioButtonGroup, MaskInput } from 'components';
-import { timeOptions } from 'utils/timeOptions';
+import { Input } from 'components/Input/Input';
+import { RadioButtonGroup } from 'components/RadioButtonGroup/RadioButtonGroup';
+import { toLocalTimeOptions } from 'utils/timeOptions';
+import { MaskInput } from 'components/MaskInput/MaskInput';
 
 import styles from './UserPersonalItem.module.scss';
 
@@ -15,11 +15,13 @@ type Props = {
   onAcceptButtonClick: (newPersonalData: PersonalFormData) => void;
 };
 
-const UserPersonalItem: FC<Props> = ({ item, label, onAcceptButtonClick }) => {
+const UserPersonalItem: FC<Props> = ({
+  item,
+  label,
+  onAcceptButtonClick,
+}) => {
   const [value, setValue] = useState(item.value);
   const [isEditAllowed, setIsEditAllowed] = useState(false);
-  const { t } = useTranslation('user-page');
-  const { locale } = useRouter();
 
   const handleConfirmButtonClick = (e: FormEvent) => {
     e.preventDefault();
@@ -55,18 +57,23 @@ const UserPersonalItem: FC<Props> = ({ item, label, onAcceptButtonClick }) => {
       default:
         return 'text';
     }
-  };
+  }
 
   const getInput = () => {
     switch (item.key) {
       case 'birthday':
-        return <MaskInput name={item.value} onChange={handleMaskInputChange} />;
+        return (
+          <MaskInput
+            name={item.value}
+            onChange={handleMaskInputChange}
+          />
+        );
       case 'gender':
         return (
           <RadioButtonGroup
             buttonsProps={[
-              { name: 'gender', text: t('male'), value: 'male' },
-              { name: 'gender', text: t('female'), value: 'female' },
+              { name: 'gender', text: 'Мужчина', value: 'male' },
+              { name: 'gender', text: 'Женщина', value: 'female' },
             ]}
             active={value}
             onChange={handleRadioInputChange}
@@ -82,14 +89,15 @@ const UserPersonalItem: FC<Props> = ({ item, label, onAcceptButtonClick }) => {
           />
         );
     }
-  };
+  }
 
   useEffect(() => {
     setValue(item.value);
   }, [item.value]);
 
-  const isSimpleValue =
-    item.key !== 'password' && item.key !== 'birthday' && item.key !== 'gender';
+  const isSimpleValue = item.key !== 'password'
+    && item.key !== 'birthday'
+    && item.key !== 'gender';
 
   return (
     <form
@@ -97,20 +105,21 @@ const UserPersonalItem: FC<Props> = ({ item, label, onAcceptButtonClick }) => {
       onSubmit={handleConfirmButtonClick}
     >
       <label className={styles.userPersonalItem__textWrapper}>
-        <span className={styles.userPersonalItem__label}>{t(label)}:</span>
+        <span className={styles.userPersonalItem__label}>{label}:</span>
         {isEditAllowed ? (
-          <div className={styles.userPersonalItem__input}>{getInput()}</div>
+          <div className={styles.userPersonalItem__input}>
+            {getInput()}
+          </div>
         ) : (
           <span className={styles.userPersonalItem__text}>
             {item.key === 'password' && '*********'}
-            {item.key === 'birthday' &&
-              new Date(+JSON.parse(value) * 1000).toLocaleString(
-                locale || [],
-                timeOptions
-              )}
-            {item.key === 'gender' &&
-              (value === 'male' ? t('male') : t('female'))}
-            {isSimpleValue && value}
+            {item.key === 'birthday' && (
+              toLocalTimeOptions(new Date(+JSON.parse(value) * 1000))
+            )}
+            {item.key === 'gender' && (
+              value === 'male' ? 'Мужчина' : 'Женщина'
+            )}
+            { isSimpleValue && (value)}
           </span>
         )}
       </label>

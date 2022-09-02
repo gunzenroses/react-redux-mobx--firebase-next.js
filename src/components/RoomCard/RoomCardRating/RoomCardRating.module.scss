@@ -1,12 +1,12 @@
 .roomCardRating {
-  display: inline-block;
+    display: inline-block;
 
-  &__star {
-    content: url('/assets/images/misc/star-border.svg');
-    margin-right: 4px;
+    &__star {
+        content: url('/assets/images/misc/star-border.svg');
+        margin-right: 4px;
 
-    &_active {
-      content: url('/assets/images/misc/star.svg');
+        &_active {
+            content: url('/assets/images/misc/star.svg');
+        }
     }
-  }
 }

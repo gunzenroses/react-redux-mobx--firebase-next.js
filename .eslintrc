@@ -4,13 +4,11 @@
     "airbnb",
     "airbnb/hooks",
     "plugin:react/jsx-runtime",
-    "plugin:@next/next/recommended",
     "prettier"
   ],
   "plugins": ["import"],
   "rules": {
     "linebreak-style": ["error", "windows"],
-    "no-alert": "off",
     "import/order": [
       "error",
       {
@@ -38,10 +36,9 @@
           "ignorePackages",
           { "ts": "never", "tsx": "never" }
         ],
-        "react/jsx-props-no-spreading": "off",
-        "react/prop-types": "off",
         "@typescript-eslint/no-unused-vars": ["error"],
         "react/function-component-definition": "off",
+        "react/no-array-index-key": "off",
         "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
         "react/jsx-no-useless-fragment": [
           "error",
@@ -58,8 +55,7 @@
           {
             "props": false
           }
-        ],
-        "jsx-a11y/anchor-is-valid": "off"
+        ]
       }
     }
   ],
@@ -70,6 +66,5 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
-  },
-  "ignorePatterns": ["**/test.tsx"],
+  }
 }

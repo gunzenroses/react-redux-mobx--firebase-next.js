@@ -2,42 +2,42 @@
 @import 'scss/utils/vars.scss';
 
 .like {
-  border-radius: 11px;
-  display: inline-flex;
-  border: 1px solid $dark-shade-25;
-  min-width: 40px;
-  height: 20px;
-  padding: 5px 4px 4px;
-  cursor: pointer;
-  align-items: center;
-  line-height: initial;
-  font-weight: initial;
-  user-select: none;
+    border-radius: 11px;
+    display: inline-flex;
+    border: 1px solid $dark-shade-25;
+    min-width: 40px;
+    height: 20px;
+    padding: 5px 4px 4px;
+    cursor: pointer;
+    align-items: center;
+    line-height: initial;
+    font-weight: initial;
+    user-select: none;
 
-  &_active {
-    border: 1px solid $colorBrandMain;
+    &_active {
+        border: 1px solid $colorBrandMain;
 
-    & .like__count {
-      color: $colorBrandMain;
+        & .like__count {
+            color: $colorBrandMain;
+        }
+
+        & .like__icon {
+            fill: $colorBrandMain;
+        }
     }
 
-    & .like__icon {
-      fill: $colorBrandMain;
+    &__icon {
+        font-size: 11px;
+        margin-right: 6px;
+        color: $dark-shade-25;
+        align-self: flex-end;
     }
-  }
 
-  &__icon {
-    font-size: 11px;
-    margin-right: 6px;
-    color: $dark-shade-25;
-    align-self: flex-end;
-  }
-
-  &__count {
-    margin: 0;
-    font-size: 10px;
-    line-height: 12px;
-    color: $dark-shade-25;
-    text-transform: initial;
-  }
+    &__count {
+        margin: 0;
+        font-size: 10px;
+        line-height: 12px;
+        color: $dark-shade-25;
+        text-transform: initial;
+    }
 }

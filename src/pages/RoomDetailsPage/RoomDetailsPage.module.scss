@@ -1,0 +1,244 @@
+@import 'scss/utils/font-template';
+@import 'scss/utils/vars';
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-width: $widthSmPhone;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid $dark-shade-25;
+  height: auto;
+}
+
+.view {
+  width: 100%;
+  height: fit-content;
+}
+
+.infoContainer {
+  width: 100%;
+}
+
+.info {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  height: fit-content;
+  padding: 70px 140px 61px 139px;
+  margin: 0 auto;
+
+  @media (max-width: 1400px) {
+    width: 80%;
+    height: auto;
+    margin: 70px auto;
+    padding: 0;
+  }
+
+  @media (max-width: $widthDesktop) {
+    width: 95%;
+    margin: 3% auto;
+  }
+
+  @media (max-width: $widthSmDesktop) {
+    flex-direction: column-reverse;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  width: 712px;
+  height: fit-content;
+
+  @media (max-width: 1400px) {
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 0 calc((100% - 760px) / 2);
+  }
+
+  @media (max-width: $widthSmDesktop) {
+    width: 712px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @media (max-width: $widthTablet) {
+    width: 100%;
+    padding: 5%;
+  }
+}
+
+.roomData {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 672px;
+  margin-left: 1px;
+
+  @media (max-width: 1400px) {
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 485px;
+  }
+
+  @media (max-width: $widthSmDesktop) {
+    justify-content: space-between;
+    flex-direction: row;
+    min-height: auto;
+    width: 100%;
+  }
+
+  @media (max-width: $widthTablet) {
+    flex-direction: column;
+    width: fit-content;
+  }
+}
+
+.roomImpression {
+  width: 311px;
+  height: 172px;
+
+  @media (max-width: 1400px) {
+    margin-top: 35px;
+  }
+
+  @media (max-width: $widthSmDesktop) {
+    margin-top: 0;
+  }
+
+  @media (max-width: $widthTablet) {
+    margin-top: 35px;
+  }
+
+  @media (max-width: $widthSmPhone) {
+    width: 100%;
+  }
+}
+
+.reviews {
+  margin-top: 32px;
+  width: 100%;
+
+  @media (max-width: 1400px) {
+    margin-top: 35px;
+  }
+}
+
+.properties {
+  display: flex;
+  flex-direction: row;
+  width: 702px;
+  margin-top: 32px;
+
+  @media (max-width: $widthSmDesktop) {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.rules {
+  width: 703px;
+
+  @media (max-width: $widthSmDesktop) {
+    width: 45%;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.cancellation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  width: 341px;
+  height: fit-content;
+
+  @media (max-width: $widthSmDesktop) {
+    width: 45%;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.booking {
+  @media (max-width: 1400px) {
+    position: absolute;
+    top: 0;
+    right: calc((100% - 800px) / 2);
+  }
+
+  @media (max-width: $widthSmDesktop) {
+    position: relative;
+    right: 0;
+    margin: 50px auto;
+  }
+
+  @media (max-width: $widthPhone) {
+    margin: 0 auto 20px;
+  }
+}
+
+.error {
+  &__container {
+    margin: 50px auto;
+    padding: 10%;
+  }
+
+  &__message {
+    @extend %sub-section-title;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+
+    &:active {
+      cursor: pointer;
+    }
+  }
+}
+
+.loader {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  font-size: 80px;
+  margin: 150px auto;
+  color: $colorBrandMain;
+  animation-name: loading;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

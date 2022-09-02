@@ -1,10 +1,8 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
-import { useTranslation } from 'next-i18next';
 
 import { TextButton } from 'components';
-import { useAppDispatch } from 'hooks/hooks';
-import { updateGuests } from 'redux/slices/searchFiltersSlice';
+import { useMobxStore } from 'hooks/hooks';
 
 import { Props as ListItemsProps, ListItem } from './ListItem/ListItem';
 import {
@@ -21,7 +19,6 @@ type Props = {
   minValue?: number;
   maxValue?: number;
   title?: string;
-  initialContent?: Guests | RoomAmenities;
   onChange?: (content: Content) => void;
 };
 
@@ -32,43 +29,25 @@ const ConfigurationDropdown: FC<Props> = ({
   minValue = 0,
   maxValue = 5,
   title = null,
-  initialContent,
   onChange = () => {},
 }) => {
-  const dispatch = useAppDispatch();
-  const { t } = useTranslation('dropdown');
-  const getInitialList = () => {
-    const result =
-      typeof template !== 'object'
-        ? dropdownData[template].list
-        : template.list;
-    if (initialContent) {
-      return result.map((item) => {
-        item.value =
-          initialContent[item.id as keyof Guests & keyof RoomAmenities];
-        return item;
-      });
-    }
-    return result;
-  };
+  const { filterStore } = useMobxStore();
+  const initialList =
+    typeof template !== 'object' ? dropdownData[template].list : template.list;
 
-  const initialList = getInitialList();
-  const pickContent = (list: ListItemsProps[]): Guests | RoomAmenities => {
+  const pickContent = (list: ListItemsProps[]): Content => {
     return list.reduce((acc: any, { value, id }) => {
       acc[id] = value;
       return acc;
     }, {});
   };
 
-  const checkIsNotZeroValues = (newList: ListItemsProps[]): boolean => {
-    return newList.some(({ value }) => value > minValue);
-  };
-
+  const [content, setContent] = useState(pickContent(initialList));
   const [itemList, setItemList] = useState(initialList);
   const [hidden, setHidden] = useState(hiddenProp);
-  const [isZeroValues, setIsZeroValues] = useState(
-    checkIsNotZeroValues(itemList)
-  );
+  const [isZeroValues, setIsZeroValues] = useState(() => {
+    return !itemList.some(({ value }) => value > minValue);
+  });
 
   const dropdown = useRef(null);
 
@@ -78,6 +57,10 @@ const ConfigurationDropdown: FC<Props> = ({
     if (newValue > maxValue) return maxValue;
     if (newValue < minValue) return minValue;
     return newValue;
+  };
+
+  const checkIsNotZeroValues = (newList: ListItemsProps[]): boolean => {
+    return newList.some(({ value }) => value > minValue);
   };
 
   const fixGuestsValues = (list: ListItemsProps[]): ListItemsProps[] => {
@@ -98,6 +81,7 @@ const ConfigurationDropdown: FC<Props> = ({
     const fixedList =
       template === 'guests' ? fixGuestsValues(newList) : newList;
     setItemList(fixedList);
+    setContent(pickContent(fixedList));
     setIsZeroValues(!checkIsNotZeroValues(fixedList));
   };
 
@@ -106,7 +90,7 @@ const ConfigurationDropdown: FC<Props> = ({
   };
 
   const handleSubmitButtonClick = (): void => {
-    onChange(pickContent(itemList));
+    onChange(content);
     setHidden(true);
   };
 
@@ -115,19 +99,18 @@ const ConfigurationDropdown: FC<Props> = ({
       return { ...item, value: minValue };
     });
     setItemList(newValue);
-    onChange(pickContent(itemList));
+    setContent(pickContent(newValue));
     setIsZeroValues(true);
   };
 
   useEffect(() => {
     if (template === 'guests')
-      dispatch(
-        updateGuests({
-          adults: itemList[0].value,
-          kids: itemList[1].value,
-          baby: itemList[2].value,
-        })
-      );
+      filterStore.updateGuests({
+        adults: itemList[0].value,
+        kids: itemList[1].value,
+        baby: itemList[2].value,
+      });
+
     const handleDocumentClick = (event: Event): void => {
       const isInDropdownArea = event
         .composedPath()
@@ -141,11 +124,11 @@ const ConfigurationDropdown: FC<Props> = ({
     return () => {
       document.removeEventListener('click', handleDocumentClick);
     };
-  }, [dispatch, itemList, template]);
+  }, [filterStore, itemList, template]);
 
   return (
     <div className={styles.roomDropdown} ref={dropdown}>
-      {title && <p className={styles.roomDropdown__title}>{t(title)}</p>}
+      {title && <p className={styles.roomDropdown__title}>{title}</p>}
       <DropdownInput
         closed={hidden}
         onClick={handleInputClick}
@@ -183,15 +166,9 @@ const ConfigurationDropdown: FC<Props> = ({
             })}
           >
             {!isZeroValues && (
-              <TextButton
-                text={t('btnClear')}
-                onClick={handleClearButtonClick}
-              />
+              <TextButton text="очистить" onClick={handleClearButtonClick} />
             )}
-            <TextButton
-              text={t('btnApply')}
-              onClick={handleSubmitButtonClick}
-            />
+            <TextButton text="применить" onClick={handleSubmitButtonClick} />
           </div>
         </div>
       )}

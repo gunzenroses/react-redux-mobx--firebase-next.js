@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { useTranslation } from 'next-i18next';
 
 import { Input } from 'components/Input/Input';
 import { Logo } from 'components/Logo/Logo';
@@ -10,7 +9,6 @@ import { links } from './constants';
 
 const FooterContent: FC = () => {
   const [email, setEmail] = useState('');
-  const { t } = useTranslation('footer');
   const handleInputOnChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
@@ -31,7 +29,8 @@ const FooterContent: FC = () => {
               <Logo />
             </div>
             <p className={styles.footerContent__description}>
-              {t('description')}
+              Бронирование номеров в лучшем отеле 2019 года по версии ассоциации
+              «Отельные взгляды»
             </p>
           </div>
           {links.map((item, index) => (
@@ -39,15 +38,13 @@ const FooterContent: FC = () => {
               className={styles.footerContent__column}
               key={`${item.title + index}`}
             >
-              <FooterList title={t(item.title)} links={item.links} />
+              <FooterList title={item.title} links={item.links} />
             </div>
           ))}
           <div className={styles.footerContent__column}>
-            <h3 className={styles.footerContent__subtitle}>
-              {t('subscription')}
-            </h3>
+            <h3 className={styles.footerContent__subtitle}>подписка</h3>
             <p className={styles.footerContent__description}>
-              {t('subscriptionText')}
+              Получайте специальные предложения и новости сервиса
             </p>
             <form
               className={styles.footerContent__form}

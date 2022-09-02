@@ -67,7 +67,7 @@ class ApiUsers {
     const userInfo = doc(this.db, 'users', userId);
     const auth = getAuth();
     const docSnap = await getDoc(userInfo);
-    const data: UserType = docSnap.data() as UserType;
+    const data: UserStateType = docSnap.data() as UserStateType;
     const value =
       personalData.key === 'birthday'
         ? new Date(+personalData.value * 1000)

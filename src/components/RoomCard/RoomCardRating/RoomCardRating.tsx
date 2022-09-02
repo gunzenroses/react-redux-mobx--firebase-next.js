@@ -27,3 +27,4 @@ const RoomCardRating: FC<Props> = ({ rating }) => {
 };
 
 export { RoomCardRating };
+

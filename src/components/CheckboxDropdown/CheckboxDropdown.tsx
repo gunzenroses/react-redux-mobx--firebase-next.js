@@ -1,10 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
-import {
-  CheckboxList,
-  CheckboxListDataType,
-} from 'components/CheckboxList/CheckboxList';
+import { CheckboxList, CheckboxListDataType } from 'components/CheckboxList/CheckboxList';
 
 import styles from './CheckboxDropdown.module.scss';
 
@@ -32,7 +29,8 @@ const CheckboxDropdown: FC<Props> = ({
     const handleDocumentClick = (event: Event): void => {
       const isInArea = event
         .composedPath()
-        .some((targetParent) => targetParent === listContainer.current);
+        .some((targetParent) =>
+          targetParent === listContainer.current);
 
       if (!isInArea) setIsOpen(false);
     };
@@ -62,9 +60,7 @@ const CheckboxDropdown: FC<Props> = ({
       </div>
       {isOpen && (
         <div className={styles.CheckboxDropdown__content}>
-          {items && (
-            <CheckboxList type={type} items={items} onChange={onChange} />
-          )}
+          {items && <CheckboxList type={type} items={items} onChange={onChange}/>}
         </div>
       )}
     </div>

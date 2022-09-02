@@ -5,9 +5,8 @@ const timeOptions: Intl.DateTimeFormatOptions = {
 };
 
 const toLocalTimeOptions = (date: Date | string): string => {
-  if (typeof date === 'string')
-    return new Date(date).toLocaleString([], timeOptions);
-  return date.toLocaleString([], timeOptions);
-};
+  if (typeof date === 'string') return new Date(date).toLocaleString([], timeOptions);
+  return date.toLocaleString([], timeOptions)
+}
 
-export { timeOptions, toLocalTimeOptions };
+export {timeOptions, toLocalTimeOptions};

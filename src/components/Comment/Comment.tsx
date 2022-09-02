@@ -1,11 +1,10 @@
 import { FC, useEffect, useState } from 'react';
-import Image from 'next/image';
-import { useTranslation } from 'next-i18next';
 
 import man from 'assets/images/misc/man.png';
 
 import styles from './Comment.module.scss';
 import { Like } from '../index';
+import { ending } from '../../utils/ending';
 
 type Props = {
   likes: number;
@@ -34,17 +33,18 @@ const Comment: FC<Props> = ({
 }) => {
   const [pressed, setPressed] = useState(isPressed);
   const [like, setLike] = useState(likes);
-  const { t } = useTranslation('room-details');
 
   const days = (Date.now() - time) / (1000 * 60 * 60 * 24);
   let realTime: string;
   if (days < 1) {
-    realTime = t('reviews.today');
+    realTime = 'Сегодня';
   } else {
     const daysRound = Math.floor(days);
-    realTime = `${daysRound} ${t('reviews.days', { count: daysRound })} ${t(
-      'reviews.ago'
-    )}`;
+    realTime = `${daysRound} ${ending(daysRound, [
+      'день',
+      'дня',
+      'дней',
+    ])} назад`;
   }
   useEffect(() => {
     setPressed(isPressed);
@@ -59,21 +59,11 @@ const Comment: FC<Props> = ({
     }
   };
 
-  const myLoader = ({ src }: { src: string }) => {
-    return src;
-  };
-
   return (
     <div className={styles.comment}>
       <div className={styles.comment__info}>
         <div className={styles.comment__imgWrapper}>
-          <Image
-            className={styles.comment__img}
-            loader={myLoader}
-            src={img}
-            alt=""
-            layout="fill"
-          />
+          <img className={styles.comment__img} src={img} alt="" />
         </div>
         <div className={styles.commentInner}>
           <p className={styles.comment__author}>{name}</p>

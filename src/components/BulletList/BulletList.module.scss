@@ -2,43 +2,43 @@
 @import 'scss/utils/vars.scss';
 
 .bulletList {
-  margin: 0;
-  list-style: none;
-  max-width: 260px;
-
-  &__title {
-    @extend %widget-text;
-    margin: 0 0 0 20px;
-    padding-bottom: 20px;
-
-    @media (max-width: 600px) {
-      margin: 0;
-    }
-  }
-
-  &__bullet {
-    @extend %body-text;
-
-    text-transform: initial;
-    position: relative;
-    margin-bottom: 10px;
-
-    &::before {
-      position: absolute;
-      content: '';
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: $dark-shade-25;
-      border-radius: 50%;
-      left: -20px;
-      transform: translateY(50%);
-    }
-  }
-
-  &__list {
     margin: 0;
     list-style: none;
-    padding: 0 0 0 20px;
-  }
+    max-width: 260px;
+
+    &__title {
+        @extend %widget-text;
+        margin: 0 0 0 20px;
+        padding-bottom: 20px;
+
+        @media (max-width: 600px) {
+            margin: 0;
+        }
+    }
+
+    &__bullet {
+        @extend %body-text;
+
+        text-transform: initial;
+        position: relative;
+        margin-bottom: 10px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: $dark-shade-25;
+            border-radius: 50%;
+            left: -20px;
+            transform: translateY(50%);
+        }
+    }
+
+    &__list {
+        margin: 0;
+        list-style: none;
+        padding: 0 0 0 20px;
+    }
 }

@@ -10,4 +10,4 @@ const fireApp = initializeApp({
   measurementId: 'G-RH5235011G',
 });
 
-export { fireApp };
+export { fireApp }

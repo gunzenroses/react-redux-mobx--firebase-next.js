@@ -42,16 +42,16 @@
     display: grid;
     max-width: 100%;
     margin: 0 auto;
-    grid-template-columns: repeat(3, 266px);
+    grid-template-columns: repeat( 3, 266px);
     grid-template-rows: 1fr;
     grid-column-gap: 15px;
   }
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 266px);
+    grid-template-columns: repeat( 2, 266px);
   }
 
   @media (max-width: 650px) {
-    grid-template-columns: repeat(1, 266px);
+    grid-template-columns: repeat( 1, 266px);
   }
 }

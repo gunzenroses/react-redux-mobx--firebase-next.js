@@ -1,9 +1,0 @@
-{
-  "btnApply": "применить",
-  "btnClear": "очистить",
-  "labelFirstTwin": "прибытие",
-  "labelFirstSingle": "даты пребывания в отеле",
-  "placeholderTwin": "ДД.ММ.ГГГГ",
-  "placeholderSingle": "ДД.ММ - ДД.ММ",
-  "labelSecond": "выезд"
-}

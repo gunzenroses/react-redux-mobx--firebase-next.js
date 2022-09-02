@@ -1,6 +1,5 @@
-import { ChangeEvent, FC } from 'react';
+import { ChangeEvent, FC, } from 'react';
 import cn from 'classnames';
-import { useTranslation } from 'next-i18next';
 
 import styles from './Checkbox.module.scss';
 
@@ -21,7 +20,6 @@ const Checkbox: FC<Props> = ({
   isShort = false,
   onChange,
 }) => {
-  const { t } = useTranslation('checkbox');
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const targetChecked = event.target.checked;
@@ -53,9 +51,9 @@ const Checkbox: FC<Props> = ({
         })}
       >
         {titleText && (
-          <span className={styles.checkbox__title}>{t(titleText)}</span>
+          <span className={styles.checkbox__title}>{titleText}</span>
         )}
-        <span className={styles.checkbox__text}>{t(text)}</span>
+        <span className={styles.checkbox__text}>{text}</span>
       </div>
     </label>
   );

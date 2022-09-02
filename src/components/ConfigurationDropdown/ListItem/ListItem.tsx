@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import cn from 'classnames';
-import { useTranslation } from 'next-i18next';
 
 import styles from './ListItem.module.scss';
 
@@ -25,11 +24,10 @@ const ListItem: FC<Props> = ({
 }) => {
   const isDecreaseDisabled = value === minValue || isDisabled;
   const isIncreaseDisabled = value === maxValue || isDisabled;
-  const { t } = useTranslation('dropdown');
 
   return (
     <li className={styles.roomDropdownListItem}>
-      <span className={styles.roomDropdownListItem__text}>{t(text)}</span>
+      <span className={styles.roomDropdownListItem__text}>{text}</span>
       <div className={styles.roomDropdownListItem__calc}>
         <button
           type="button"

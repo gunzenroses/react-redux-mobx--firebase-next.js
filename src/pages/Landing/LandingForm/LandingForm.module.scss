@@ -1,0 +1,40 @@
+@import 'scss/utils/vars';
+@import 'scss/utils/font-template';
+
+.landingForm {
+    padding: 40px 30px 30px;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+    background: #fff;
+    border: 1px solid rgb(0 0 0 / 12%);
+    max-width: 380px;
+    width: 100%;
+
+    @media (max-width: 370px) {
+        padding: 25px 15px 20px;
+    }
+
+    &__title {
+        @extend %sub-section-title;
+
+        margin: 0;
+    }
+
+    &__calendarWrapper {
+        margin-top: 21px;
+    }
+
+    &__dropdownWrapper {
+        margin-top: 12px;
+
+        &Text {
+            @extend %label-text;
+
+            text-transform: uppercase;
+        }
+    }
+
+    &__submit {
+        margin-top: 32px;
+    }
+}

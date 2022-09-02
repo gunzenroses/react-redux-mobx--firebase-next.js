@@ -32,7 +32,7 @@ const RadioButtonGroup: FC<Props> = ({
             text={text}
             isChecked={value === activeValue}
             onChange={onButtonChange}
-            key={String(key.toFixed())}
+            key={String(key)}
           />
         );
       })}

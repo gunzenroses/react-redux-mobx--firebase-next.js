@@ -3,11 +3,7 @@ import { FC } from 'react';
 import { Checkbox } from 'components';
 import { Props as CheckboxProps } from 'components/Checkbox/Checkbox';
 
-import {
-  accessibilityData,
-  additionalFacilitiesData,
-  rulesData,
-} from './constants';
+import { accessibilityData, additionalFacilitiesData, rulesData } from './constants';
 
 const CheckboxListData = {
   accessibility: accessibilityData,
@@ -34,10 +30,10 @@ const CheckboxList: FC<Props> = ({
 }) => {
   let appliedData;
   if (data) {
-    appliedData = data;
+    appliedData = data 
   } else if (type) {
-    appliedData = CheckboxListData[type];
-  }
+    appliedData = CheckboxListData[type]; 
+  };
 
   const itemsKeys = Object.keys(items);
   const newData =

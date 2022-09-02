@@ -1,28 +1,28 @@
 const links = [
   {
-    title: 'navigation',
+    title: 'навигация',
     links: [
-      { text: 'aboutUs', link: '/mock-address' },
-      { text: 'news', link: '/mock-address' },
-      { text: 'support', link: '/mock-address' },
-      { text: 'services', link: '/mock-address' },
+      { text: 'О нас', link: '/mock-address' },
+      { text: 'Новости', link: '/mock-address' },
+      { text: 'Служба поддержки', link: '/mock-address' },
+      { text: 'Услуги', link: '/mock-address' },
     ],
   },
   {
-    title: 'aboutUs',
+    title: 'о нас',
     links: [
-      { text: 'aboutService', link: '/mock-address' },
-      { text: 'ourTeam', link: '/mock-address' },
-      { text: 'vacancy', link: '/mock-address' },
-      { text: 'investors', link: '/mock-address' },
+      { text: 'О сервисе', link: '/mock-address' },
+      { text: 'Наша команда', link: '/mock-address' },
+      { text: 'Вакансии', link: '/mock-address' },
+      { text: 'Инвесторы', link: '/mock-address' },
     ],
   },
   {
-    title: 'support',
+    title: 'Служба поддержки',
     links: [
-      { text: 'agreements', link: '/mock-address' },
-      { text: 'communities', link: '/mock-address' },
-      { text: 'contactUs', link: '/mock-address' },
+      { text: 'Соглашения', link: '/mock-address' },
+      { text: 'Сообщества', link: '/mock-address' },
+      { text: 'Связь с нами', link: '/mock-address' },
     ],
   },
 ];

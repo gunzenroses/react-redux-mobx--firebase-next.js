@@ -1,5 +1,4 @@
 import React, { FC, useRef, useState } from 'react';
-import { useTranslation } from 'next-i18next';
 
 import styles from './TextArea.module.scss';
 import { Button } from '../Button/Button';
@@ -12,14 +11,13 @@ type Props = {
 };
 
 const TextArea: FC<Props> = ({
-  title = 'textArea.title',
+  title = 'Новый комментарий',
   name = 'newComment',
-  placeholder = 'textArea.placeHolder',
+  placeholder = 'Здесь мог быть ваш комментарий',
   onSubmit,
 }) => {
   const [text, setText] = useState('');
   const textArea = useRef<HTMLTextAreaElement>(null);
-  const { t } = useTranslation('room-details');
   const handleOnChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
@@ -32,20 +30,20 @@ const TextArea: FC<Props> = ({
 
   return (
     <form className={styles.textarea__wrapper} onSubmit={handleOnSubmit}>
-      <h3 className={styles.textarea__title}>{t(title)}</h3>
+      <h3 className={styles.textarea__title}>{title}</h3>
       <textarea
         value={text}
         onChange={handleOnChange}
         name={name}
         className={styles.textarea}
-        placeholder={t(placeholder)}
+        placeholder={placeholder}
         ref={textArea}
       />
       <Button type="submit" sizeFitContent>
-        {t('textArea.btnSubmit')}
+            Отправить
       </Button>
     </form>
-  );
+  ) 
 };
 
 export { TextArea };

@@ -1,11 +1,9 @@
 import { FC, useEffect, useMemo, useState } from 'react';
-import { useTranslation } from 'next-i18next';
 
 import { Comment, Pagination } from 'components';
-import { setComments } from 'redux/slices/roomDetailsSlice';
-import { useAppDispatch, useAuth } from 'hooks/hooks';
-import { removeLike, setLike } from 'redux/thunks/users';
-import { changeUserLikes } from 'redux/slices/userSlice';
+import { ending } from 'utils/ending';
+import { useMobxAuth, useMobxStore } from 'hooks/hooks';
+import { roomDetailsStore } from 'mobx/stores/roomDetailsStore';
 
 import styles from './CommentList.module.scss';
 
@@ -18,20 +16,23 @@ type Props = {
 };
 
 const CommentList: FC<Props> = ({
-  title = 'reviews.reviewsTitle',
+  title = 'Отзывы посетителей номера',
   amount = 2,
   items = null,
   isAuth = false,
   roomId = '',
 }) => {
-  const dispatch = useAppDispatch();
-  const { likes, id } = useAuth();
+
+  const { userStore } = useMobxStore();
   const itemsLength = items ? items.length : 0;
   const hasComments = items && items.length > 1;
   const itemsOnPage = amount;
   const withPagination = itemsLength > itemsOnPage;
   const [currentPage, setCurrentPage] = useState(1);
   const initialComments = items && items.slice(0, itemsOnPage);
+
+  const { id, likes } = useMobxAuth();
+
   const liked = useMemo(
     () =>
       likes.filter((item: { room: string }) => {
@@ -39,12 +40,12 @@ const CommentList: FC<Props> = ({
       }),
     [likes, roomId]
   );
+
   const [currentComments, setCurrentComments] = useState(initialComments);
   const [likedCurrentUser, setLikedCurrentUser] = useState([-1]);
   const handlePaginationChange = (newPage: number) => {
     setCurrentPage(newPage);
   };
-  const { t } = useTranslation('room-details');
 
   useEffect(() => {
     const start = (currentPage - 1) * itemsOnPage;
@@ -67,7 +68,7 @@ const CommentList: FC<Props> = ({
   const handleLike = (commentId: number) => {
     const start = (currentPage - 1) * itemsOnPage;
     const realCommentId = start + commentId;
-    dispatch(setLike({ roomId, commentId: realCommentId, uid: id }));
+    userStore.setLike({ roomId, commentId: realCommentId, uid: id });
     if (items) {
       const comments = items.map((item, i) => {
         if (i === realCommentId) {
@@ -75,7 +76,7 @@ const CommentList: FC<Props> = ({
         }
         return item;
       });
-      dispatch(setComments({ comments }));
+      roomDetailsStore.setComments(comments);
     }
     const newLikes = likes.map((item) => {
       if (item.room === roomId) {
@@ -83,13 +84,13 @@ const CommentList: FC<Props> = ({
       }
       return item;
     });
-    dispatch(changeUserLikes({ likes: newLikes }));
+    userStore.changeUserLikes(newLikes);
   };
 
   const handleDislike = (commentId: number) => {
     const start = (currentPage - 1) * itemsOnPage;
     const realCommentId = start + commentId;
-    dispatch(removeLike({ roomId, commentId: realCommentId, uid: id }));
+    userStore.removeLike({ roomId, commentId: realCommentId, uid: id });
     if (items) {
       const comments = items.map((item, i) => {
         if (i === realCommentId) {
@@ -97,7 +98,7 @@ const CommentList: FC<Props> = ({
         }
         return item;
       });
-      dispatch(setComments({ comments }));
+      roomDetailsStore.setComments(comments);
     }
     const newLikes = likes.map((item) => {
       if (item.room === roomId) {
@@ -108,12 +109,12 @@ const CommentList: FC<Props> = ({
       }
       return item;
     });
-    dispatch(changeUserLikes({ likes: newLikes }));
+    userStore.changeUserLikes(newLikes);
   };
 
   return (
     <section className={styles.content}>
-      <h2 className={styles.title}>{t(title)}</h2>
+      <h2 className={styles.title}>{title}</h2>
       {withPagination && (
         <div className={styles.pagination}>
           <Pagination
@@ -126,11 +127,9 @@ const CommentList: FC<Props> = ({
         </div>
       )}
       {hasComments && (
-        <span className={styles.reviews}>{`${itemsLength} ${t(
-          'reviews.review',
-          {
-            count: itemsLength,
-          }
+        <span className={styles.reviews}>{`${itemsLength} ${ending(
+          itemsLength,
+          ['oтзыв', 'oтзыва', 'oтзывов']
         )}`}</span>
       )}
       <div className={styles.comment}>
@@ -145,7 +144,7 @@ const CommentList: FC<Props> = ({
             ({ likes: likesCurr, text, time, name, img, isPressed }, key) => {
               return (
                 <Comment
-                  key={String(key.toFixed())}
+                  key={String(key)}
                   id={key}
                   text={text}
                   likes={likesCurr}

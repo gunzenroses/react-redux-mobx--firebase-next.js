@@ -1,28 +1,24 @@
 import { FC } from 'react';
-import { useTranslation } from 'next-i18next';
 
-import { useAppDispatch } from 'hooks/hooks';
-import { updateUser } from 'redux/thunks/users';
+import { useMobxStore } from 'hooks/hooks';
 
 import { UserPersonalItem } from './UserPersonalItem/UserPersonalItem';
 import { itemList } from './constans';
 import styles from './UserPersonalForm.module.scss';
 
 type Props = {
-  personalData: UserType;
+  personalData: UserStateType;
 };
 
 const UserPersonalForm: FC<Props> = ({ personalData }) => {
-  const dispatch = useAppDispatch();
+  const { userStore } = useMobxStore();
+
   const handleAcceptNameButtonCLick = (newPersonalData: PersonalFormData) => {
-    dispatch(
-      updateUser({
-        user: personalData.id,
-        personalData: newPersonalData,
-      })
-    );
+    userStore.updateUser({
+        id: personalData.id,
+        data: newPersonalData,
+      });
   };
-  const { t } = useTranslation('user-page');
 
   const getBirthday = (): string => {
     return personalData.birthday
@@ -30,7 +26,7 @@ const UserPersonalForm: FC<Props> = ({ personalData }) => {
       : new Date().getMilliseconds();
   };
 
-  const getValue = (key: keyof UserType | 'password'): string => {
+  const getValue = (key: keyof UserStateType | 'password'): string => {
     switch (key) {
       case 'password':
         return '*******';
@@ -47,14 +43,16 @@ const UserPersonalForm: FC<Props> = ({ personalData }) => {
 
   return (
     <div className={styles.userPersonalForm}>
-      <h2 className={styles.userPersonalForm__title}>{t('yourData')}</h2>
+      <h2 className={styles.userPersonalForm__title}>
+        Ваши персональные данные:
+      </h2>
       <div className={styles.userPersonalForm__content}>
         {itemList.map(({ key, label }) => {
           return (
-            <div className={styles.userPersonalForm__itemWrapper} key={key}>
+            <div className={styles.userPersonalForm__itemWrapper} key={String(key)}>
               <UserPersonalItem
                 item={{ key, value: getValue(key) }}
-                label={key}
+                label={label}
                 onAcceptButtonClick={handleAcceptNameButtonCLick}
               />
             </div>

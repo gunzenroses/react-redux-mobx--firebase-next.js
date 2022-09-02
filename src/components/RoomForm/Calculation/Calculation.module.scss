@@ -2,12 +2,13 @@
 @import 'scss/utils/font-template.scss';
 
 .calculation {
+
   &__inner {
     @extend %body-text;
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
+  }  
 
   &__row {
     display: grid;
@@ -33,7 +34,7 @@
     background-color: $colorBackground;
     cursor: pointer;
 
-    &Text {
+    &Text{
       @extend %body-text;
       font-size: $fontSizeLabel;
       text-align: center;

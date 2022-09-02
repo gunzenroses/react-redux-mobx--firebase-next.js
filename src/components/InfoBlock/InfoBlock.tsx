@@ -7,9 +7,12 @@ type Props = {
   text?: string;
 };
 
-const InfoBlock: FC<Props> = ({ title = 'Отмена', text = '' }) => {
+const InfoBlock: FC<Props> = ({
+  title = 'Отмена',
+  text = '',
+}) => {
   return (
-    <div data-testid="InfoBlock-wrapper">
+    <div>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.text}>{text}</p>
     </div>

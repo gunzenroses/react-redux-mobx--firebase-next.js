@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 import styles from './ProfileLink.module.scss';
 
@@ -9,10 +9,8 @@ type Props = {
 
 const ProfileLink: FC<Props> = ({ name }) => {
   return (
-    <Link href="/user-page" passHref>
-      <a href="replace" className={styles.profile}>
-        {name}
-      </a>
+    <Link to="/user-page" className={styles.profile}>
+      {name}
     </Link>
   );
 };

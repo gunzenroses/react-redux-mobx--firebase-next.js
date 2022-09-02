@@ -1,7 +1,7 @@
 type ItemList = {
-  key: keyof UserType | 'password';
+  key: keyof UserStateType | "password";
   label: string;
-};
+}
 
 const itemList: ItemList[] = [
   { key: 'email', label: 'Email' },
@@ -10,6 +10,6 @@ const itemList: ItemList[] = [
   { key: 'surname', label: 'Фамилия' },
   { key: 'gender', label: 'Пол' },
   { key: 'birthday', label: 'День рождения' },
-];
+]
 
 export { itemList };

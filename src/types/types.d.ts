@@ -1,12 +1,11 @@
-module "*.png";
-module "*.svg";
+declare module '*.scss';
 
 type UserLikesInfo = {
   comments: number[];
   room: string;
 };
 
-type UserType = {
+type UserStateType = {
   email: string;
   id: string;
   name: string;
@@ -17,17 +16,20 @@ type UserType = {
   likes: UserLikesInfo[];
 };
 
+type userInfo = {
+  email: string;
+  id: string;
+  name: string;
+  surname: string;
+};
+
 type CommentType = {
+  img?: string;
+  isPressed: boolean;
   likes: number;
+  name: string;
   text: string;
   time: number;
-  name: string;
-  isPressed: boolean;
-  img?: string;
-  isAuth?: boolean;
-  id?: number;
-  onSetLike?: (id: number) => void;
-  onRemoveLike?: (id: number) => void;
 };
 
 type Info = {
@@ -107,25 +109,54 @@ type InnerFilters =
   | RoomAmenities
   | Rules;
 
-type RoomCardType = {
-  id?: number;
+type Room = Omit<Filters, 'price'> & {
+  id: number;
   imgSrc: string[];
   number: number;
   type: string;
   rating: number;
   price: number;
-  costRange?: string;
   reviewsAmount: number;
 };
 
-type Room = Omit<Filters, 'price'> & RoomCardType;
+type RoomInfo = {
+  accessibility: { wideCorridor: boolean; assistant: boolean };
+  additionalFacilities: {
+    writingDesk: boolean;
+    feedingChair: boolean;
+    shampoo: boolean;
+    crib: boolean;
+    tv: boolean;
+  };
+  guests: { kids: number; baby: number; adults: number };
+  id: number;
+  imgSrc: string[];
+  number: number;
+  price: number;
+  rating: number;
+  reviewsAmount: number;
+  roomAmenities: { bedrooms: number; beds: number; bathrooms: number };
+  rules: { allowSmoke: boolean; allowGuests: boolean; allowPets: boolean };
+  type: string;
+};
+
+type BookingData = {
+  number: number;
+  type: string;
+  price: number;
+  date: FreeDays;
+  guests: Guests;
+  imgSrc: string[];
+  totalCost: number;
+  rating: number;
+  reviewsAmount: number;
+};
 
 type BookingStatus = 'rejected' | 'fetching' | 'fulfilled' | 'idle';
 
-type BookingData = RoomCardType & {
-  date: FreeDays;
-  guests: Guests;
-  totalCost: number;
+type Bookings = {
+  bookings: BookingData[];
+  bookingStatus: BookingStatus;
 };
 
 type Content = {
@@ -141,6 +172,34 @@ type RegistrationData = {
 };
 
 type PersonalFormData = {
-  key: keyof UserType | 'password';
+  key: keyof UserStateType | 'password';
   value: string;
+};
+
+type RoomCardData = {
+  roomId?: number;
+  imgSrc?: string[];
+  type?: string;
+  number?: number;
+  price?: number;
+  costRange?: string;
+  reviewsAmount?: number;
+  rating?: number;
+};
+
+type RoomInfoData = {
+  info: RoomInfo | null;
+  isFetching: boolean;
+  isRejected: boolean;
+};
+
+type SetLikeProps = {
+  roomId: string;
+  commentId: number;
+  uid: string;
+};
+
+type CreateComment = {
+  id: string;
+  newComment: CommentType;
 };

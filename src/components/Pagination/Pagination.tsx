@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { useTranslation } from 'next-i18next';
 
 import styles from './Pagination.module.scss';
 import { PaginationList } from './PaginationList/PaginationList';
@@ -17,11 +16,10 @@ const Pagination: FC<Props> = ({
   page,
   itemsCount = 180,
   itemsPerPage = 12,
-  itemsOutputMessage = 'text',
+  itemsOutputMessage = 'вариантов аренды',
   withText = true,
   onChange,
 }) => {
-  const { t } = useTranslation('pagination');
   const pagesCount = Math.ceil(itemsCount / itemsPerPage);
 
   return (
@@ -29,8 +27,8 @@ const Pagination: FC<Props> = ({
       <PaginationList page={page} onChange={onChange} pagesCount={pagesCount} />
       {withText && (
         <div className={styles.pagination__text}>
-          {(page - 1) * itemsPerPage + 1} – {itemsPerPage * page} {t('from')}{' '}
-          {itemsCount > 100 ? '100+' : itemsCount} {t(itemsOutputMessage)}
+          {(page - 1) * itemsPerPage + 1} – {itemsPerPage * page} из{' '}
+          {itemsCount > 100 ? '100+' : itemsCount} {itemsOutputMessage}
         </div>
       )}
     </div>

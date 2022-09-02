@@ -1,20 +1,15 @@
 import { FC } from 'react';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 
-import { TextButton } from 'components';
-import { timeOptions } from 'utils/timeOptions';
+import { TextButton } from 'components/TextButton/TextButton';
+import { RoomCard } from 'components';
+import { bookingStore } from 'mobx/stores/bookingStore';
+import { toLocalTimeOptions } from 'utils/timeOptions';
 
-import { RoomCard } from '../RoomCard/RoomCard';
 import styles from './BookedRoomCard.module.scss';
 
-type Props = {
-  data: BookingData;
-  userId: string;
-  onClick?: (userId: string, data: BookingData) => void;
-};
+type Props = { data: BookingData; id: string };
 
-const BookedRoomCard: FC<Props> = ({ data, userId, onClick }) => {
+const BookedRoomCard: FC<Props> = ({ data, id }) => {
   const {
     imgSrc,
     type,
@@ -28,11 +23,12 @@ const BookedRoomCard: FC<Props> = ({ data, userId, onClick }) => {
   } = data;
   const { adults, baby, kids } = guests;
 
-  const { t } = useTranslation('room-card');
-  const { locale } = useRouter();
+  const handleCancelButtonClick = () => {
+    bookingStore.removeBooking({ id, data });
+  };
 
   return (
-    <div className={styles.container} data-testid="booked-card">
+    <div className={styles.container}>
       <RoomCard
         rating={rating}
         reviewsAmount={reviewsAmount}
@@ -40,40 +36,37 @@ const BookedRoomCard: FC<Props> = ({ data, userId, onClick }) => {
         imgSrc={imgSrc}
         number={number}
         type={type}
-        id={data.id}
       />
       <div className={styles.info}>
-        <h3 className={styles.title}>{t('bookingInfo')}:</h3>
+        <h3 className={styles.title}>Информация о бронировании:</h3>
         <p className={styles.text}>
-          <span>{t('arrived')}: </span>
-          {date.from &&
-            new Date(date.from).toLocaleString(locale || [], timeOptions)}
+          <span>прибытие: </span>
+          {date.from ? toLocalTimeOptions(date.from) : ''}
         </p>
         <p className={styles.text}>
-          <span>{t('departure')}: </span>{' '}
-          {date.to &&
-            new Date(date.to).toLocaleString(locale || [], timeOptions)}
+          <span>выезд: </span>{' '}
+          {date.to ? toLocalTimeOptions(date.to) : ''}
         </p>
         <p className={styles.text}>
-          <span>{t('adults')}: </span> {adults}
+          <span>взрослых: </span> {adults}
         </p>
         {kids > 0 && (
           <p className={styles.text}>
-            <span>{t('kids')}: </span> {kids}
+            <span>детей: </span> {kids}
           </p>
         )}
         {baby > 0 && (
           <p className={styles.text}>
-            <span>{t('babies')}: </span> {baby}
+            <span>младенцев: </span> {baby}
           </p>
         )}
         <p className={styles.text}>
-          <span>{t('cost')}: </span> {totalCost.toLocaleString()}₽
+          <span>цена: </span> {totalCost.toLocaleString()}₽
         </p>
         <div className={styles.cancelButton}>
           <TextButton
-            text={t('cancel')}
-            onClick={() => onClick && onClick(userId, data)}
+            text="Отменить бронирование"
+            onClick={handleCancelButtonClick}
           />
         </div>
       </div>

@@ -5,21 +5,16 @@ import { defaultTextArray } from './constants';
 
 type Props = {
   textArray?: string[];
-  title?: string;
+  title?: string
 };
 
-const BulletList: FC<Props> = ({
-  textArray = defaultTextArray,
-  title = 'Правила',
-}) => {
+const BulletList: FC<Props> = ({ textArray = defaultTextArray, title = 'Правила' }) => {
   return (
     <section className={styles.bulletList}>
       <p className={styles.bulletList__title}>{title}</p>
       <ul className={styles.bulletList__list}>
         {textArray.map((text, key) => (
-          <li className={styles.bulletList__bullet} key={String(key.toFixed())}>
-            {text}
-          </li>
+          <li className={styles.bulletList__bullet} key={String(key)} >{text}</li>
         ))}
       </ul>
     </section>

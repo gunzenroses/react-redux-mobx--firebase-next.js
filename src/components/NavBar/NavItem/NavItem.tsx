@@ -1,31 +1,30 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import { NavLink, useMatch } from 'react-router-dom';
 import { MdExpandMore } from 'react-icons/md';
 import classNames from 'classnames/bind';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
 
 import styles from './NavItem.module.scss';
 
 type Props = {
   title: string;
   to: string;
-  content?: { title: string; to: string }[];
+  content?: { title: string; to: string; }[];
 };
 
 const cn = classNames.bind(styles);
 
-const NavItem: FC<Props> = ({ title, to, content }) => {
+const NavItem: FC<Props> = ({
+  title,
+  to,
+  content
+}) => {
   const [isOpen, setOpen] = useState(false);
-  const { t } = useTranslation('header');
 
   const button = useRef(null);
 
   const dropdown = useRef(null);
 
-  const router = useRouter();
-
-  const isMatched = router.asPath === to;
+  const isMatched = useMatch(to);
 
   useEffect(() => {
     const handlePointerDown = (event: Event): void => {
@@ -37,7 +36,7 @@ const NavItem: FC<Props> = ({ title, to, content }) => {
         return targetParent === dropdown.current;
       });
 
-      if (!isInArea && !isOnButton) {
+      if (!isInArea && !isOnButton) { 
         setOpen(false);
       } else if (isOnButton) {
         setOpen((prevValue) => !prevValue);
@@ -65,9 +64,9 @@ const NavItem: FC<Props> = ({ title, to, content }) => {
             navLink__button: true,
             navLink__button_type_active: isMatched,
           })}
-          title={t(title)}
+          title={title}
         >
-          {t(title)}
+          {title}
         </div>
       </div>
       {isOpen && (
@@ -75,21 +74,17 @@ const NavItem: FC<Props> = ({ title, to, content }) => {
           {content &&
             content.map((item, key) => {
               return (
-                <li
-                  className={styles.navLink__contentLink}
-                  key={String(key.toFixed())}
-                >
-                  <Link href={`${to}${item.to}`}>
-                    <a
-                      className={cn({
-                        navLink__button: true,
-                        navLink__button_type_active: isMatched,
-                      })}
-                      title={t(item.title)}
-                    >
-                      {t(item.title)}
-                    </a>
-                  </Link>
+                <li className={styles.navLink__contentLink} key={String(key)}>
+                  <NavLink
+                    to={`${to}${item.to}`}
+                    className={cn({
+                      navLink__button: true,
+                      navLink__button_type_active: isMatched,
+                    })}
+                    title={item.title}
+                  >
+                    {item.title}
+                  </NavLink>
                 </li>
               );
             })}
@@ -103,17 +98,16 @@ const NavItem: FC<Props> = ({ title, to, content }) => {
         navLink_type_dropdown: content,
       })}
     >
-      <Link href={to}>
-        <a
-          className={cn({
-            navLink__button: true,
-            navLink__button_type_active: isMatched,
-          })}
-          title={t(title)}
-        >
-          {t(title)}
-        </a>
-      </Link>
+      <NavLink
+        to={to}
+        className={cn({
+          navLink__button: true,
+          navLink__button_type_active: isMatched,
+        })}
+        title={title}
+      >
+        {title}
+      </NavLink>
     </li>
   );
 };

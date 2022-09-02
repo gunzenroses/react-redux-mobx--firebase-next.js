@@ -15,10 +15,9 @@ const rtf = new Intl.RelativeTimeFormat('ru', { numeric: 'auto' });
  */
 function relativeTimeFromElapsed(elapsed: number): string {
   const relativeTimesList = units.map(({ unit, ms }) => {
-    const time =
-      Math.abs(elapsed) >= ms || unit === 'second'
-        ? rtf.format(Math.round(elapsed / ms), unit)
-        : null;
+    const time = (Math.abs(elapsed) >= ms || unit === 'second') ?
+      rtf.format(Math.round(elapsed / ms), unit) 
+      : null;
     return time;
   });
   const relativeTime = relativeTimesList.find((rTime) => rTime !== null);

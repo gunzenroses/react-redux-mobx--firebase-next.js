@@ -2,225 +2,193 @@
 @import 'scss/utils/font-template.scss';
 
 .roomCard {
-  max-width: 270px;
-  box-shadow: 0 10px 20px rgb(31 32 65 / 5%);
-  border-radius: 4px;
-  overflow: hidden;
-  height: fit-content;
+    max-width: 270px;
+    box-shadow: 0 10px 20px rgb(31 32 65 / 5%);
+    border-radius: 4px;
+    overflow: hidden;
+    height: fit-content;
 
-  &__content {
-    padding: 16px 20px 14px;
-    background: #fff;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-
-  &__list {
-    padding: 0;
-    margin: 0;
-
-    &Item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      &:first-child {
-        padding-top: 5px;
-        padding-bottom: 9px;
-      }
-
-      &:last-child {
-        padding-top: 7px;
-        padding-bottom: 2px;
-      }
-
-      &:not(:last-child) {
-        border-bottom: 1px solid rgb(31 32 65 / 10%);
-      }
-    }
-  }
-
-  &__number {
-    @extend %widget-text;
-
-    &::before {
-      content: '№';
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 17px;
-      color: $dark-shade-100;
-      margin-right: 4px;
-    }
-  }
-
-  &__type {
-    @extend %label-text;
-
-    color: $colorBrandMain;
-    margin-left: 8px;
-  }
-
-  &__price {
-    @extend %body-text;
-
-    color: $dark-shade-50;
-
-    &Inner {
-      line-height: 23px;
-      margin-left: 4px;
+    &__content {
+        padding: 16px 20px 14px;
+        background: #fff;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
     }
 
-    &Date {
-      font-size: $fontSizeLabel;
-    }
-  }
+    &__list {
+        padding: 0;
+        margin: 0;
 
-  &__reviews {
-    @extend %body-text;
+        &Item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-    display: flex;
-    align-items: center;
-    column-gap: 4px;
-    line-height: 29px;
-    color: $dark-shade-50;
-  }
+            &:first-child {
+                padding-top: 5px;
+                padding-bottom: 9px;
+            }
 
-  &__rating {
-    margin-left: 2px;
-  }
+            &:last-child {
+                padding-top: 7px;
+                padding-bottom: 2px;
+            }
 
-  &__price {
-    @extend %body-text;
-
-    color: $dark-shade-50;
-
-    &Inner {
-      line-height: 23px;
-      margin-left: 4px;
+            &:not(:last-child) {
+                border-bottom: 1px solid rgb(31 32 65 / 10%);
+            }
+        }
     }
 
-    &Date {
-      font-size: $fontSizeLabel;
+    &__number {
+        @extend %widget-text;
+
+        &::before {
+            content: '№';
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;
+            color: $dark-shade-100;
+            margin-right: 4px;
+        }
     }
-  }
 
-  &__reviews {
-    @extend %body-text;
+    &__type {
+        @extend %label-text;
 
-    display: flex;
-    align-items: center;
-    column-gap: 4px;
-    line-height: 29px;
-    color: $dark-shade-50;
-  }
+        color: $colorBrandMain;
+        margin-left: 8px;
+    }
 
-  &__rating {
-    margin-left: 2px;
-  }
+    &__price {
+        @extend %body-text;
 
-  &__roomLink {
-    text-decoration: none;
-  }
+        color: $dark-shade-50;
 
-  :global {
+        &Inner {
+            line-height: 23px;
+            margin-left: 4px;
+        }
+
+        &Date {
+            font-size: $fontSizeLabel;
+        }
+    }
+
+    &__reviews {
+        @extend %body-text;
+
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
+        line-height: 29px;
+        color: $dark-shade-50;
+    }
+
+    &__rating {
+        margin-left: 2px;
+    }
+
+    &__roomLink {
+        text-decoration: none;
+    }
+}
+
+:global {
     .carousel .slide img {
-      width: initial;
+        width: initial;
     }
 
     .carousel img {
-      width: initial;
+        width: initial;
     }
 
     .carousel.carousel-slider:hover {
-      & .control-next:not(.control-disabled) {
-        display: block;
-        background: linear-gradient(
-          270deg,
-          rgb(0 0 0 / 50%) 0%,
-          rgb(0 0 0 / 0%) 99.99%,
-          rgb(255 255 255 / 0%) 100%
-        );
-      }
+        & .control-next:not(.control-disabled) {
+            display: block;
+            background: linear-gradient(
+                            270deg,
+                            rgb(0 0 0 / 50%) 0%,
+                            rgb(0 0 0 / 0%) 99.99%,
+                            rgb(255 255 255 / 0%) 100%
+            );
+        }
 
-      & .control-prev:not(.control-disabled) {
-        display: block;
-        background: linear-gradient(
-          90deg,
-          rgb(0 0 0 / 50%) 0%,
-          rgb(0 0 0 / 0%) 99.99%,
-          rgb(255 255 255 / 0%) 100%
-        );
-      }
+        & .control-prev:not(.control-disabled)  {
+            display: block;
+            background: linear-gradient(
+                            90deg,
+                            rgb(0 0 0 / 50%) 0%,
+                            rgb(0 0 0 / 0%) 99.99%,
+                            rgb(255 255 255 / 0%) 100%
+            );
+        }
     }
 
     .carousel .control-dots {
-      text-align: right;
-      right: 15px;
+        text-align: right;
+        right: 15px;
     }
 
     .carousel .control-dots .dot {
-      border: 1px solid #fff;
-      box-shadow: none;
-      background: none;
-      margin: 0 1.5px;
-      z-index: 1;
+        border: 1px solid #fff;
+        box-shadow: none;
+        background: none;
+        margin: 0 1.5px;
+        z-index: 1;
     }
 
     .carousel .control-dots .dot.selected {
-      background: #ffffff;
+        background: #ffffff;
     }
 
-    .carousel .control-arrow,
-    .carousel.carousel-slider .control-arrow {
-      opacity: 1;
-      padding: 14px;
-      display: none;
+    .carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+        opacity: 1;
+        padding: 14px;
+        display: none;
     }
 
     .carousel .control-next.control-arrow {
-      z-index: 0;
+        z-index: 0;
     }
 
-    .carousel .control-arrow:before,
-    .carousel.carousel-slider .control-arrow:before {
-      border-top: none;
-      border-bottom: none;
-      border-left: none;
-      position: relative;
-      background-color: #fff;
-      width: 2px;
-      height: 10px;
-      transform-origin: bottom;
-      transform: rotate(45deg);
-      right: 3px;
+    .carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+        position: relative;
+        background-color: #fff;
+        width: 2px;
+        height: 10px;
+        transform-origin: bottom;
+        transform: rotate(45deg);
+        right: 3px;
     }
 
-    .carousel .control-arrow:after,
-    .carousel.carousel-slider .control-arrow:after {
-      position: relative;
-      background-color: #fff;
-      width: 2px;
-      height: 10px;
-      content: '';
-      right: 3px;
-      display: inline-block;
-      transform-origin: top;
-      transform: rotate(130deg);
-      top: 4px;
+    .carousel .control-arrow:after, .carousel.carousel-slider .control-arrow:after {
+        position: relative;
+        background-color: #fff;
+        width: 2px;
+        height: 10px;
+        content: '';
+        right: 3px;
+        display: inline-block;
+        transform-origin: top;
+        transform: rotate(130deg);
+        top: 4px;
     }
 
     .carousel .control-prev.control-arrow:before {
-      border-right: none;
-      transform-origin: bottom;
-      transform: rotate(45deg);
-      bottom: 7px;
+        border-right: none;
+        transform-origin: bottom;
+        transform: rotate(45deg);
+        bottom: 7px;
     }
 
     .carousel .control-prev.control-arrow:after {
-      border-right: none;
-      top: -1px;
-      transform-origin: bottom;
-      transform: rotate(-45deg);
+        border-right: none;
+        top: -1px;
+        transform-origin: bottom;
+        transform: rotate(-45deg);
     }
-  }
 }

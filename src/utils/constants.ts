@@ -29,27 +29,4 @@ const defaultRoom = {
   type: 'Люкс',
 };
 
-const testFilters: Filters = {
-  accessibility: { wideCorridor: false, assistant: false },
-  additionalFacilities: {
-    breakfast: false,
-    crib: false,
-    feedingChair: false,
-    shampoo: false,
-    tv: false,
-    writingDesk: false,
-  },
-  freeDays: {
-    from: null,
-    to: null,
-  },
-  guests: { kids: 0, adults: 0, baby: 0 },
-  price: { from: 5000, to: 10000 },
-  roomAmenities: { bedrooms: 0, beds: 0, bathrooms: 0 },
-  rules: { allowGuests: false, allowSmoke: false, allowPets: false },
-};
-
-const cancellationPolicy =
-  'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.';
-
-export { defaultRoom, testFilters, cancellationPolicy };
+export { defaultRoom };

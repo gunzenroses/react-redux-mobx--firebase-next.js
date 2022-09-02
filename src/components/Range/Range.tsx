@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import { useTranslation } from 'next-i18next';
 
 import styles from './Range.module.scss';
 
@@ -20,8 +19,8 @@ const Range: FC<Props> = ({
   max = 15000,
   step = 100,
   value = [5000, 10000],
-  labelText = 'labelText',
-  rangeText = 'rangeText',
+  labelText = 'Диапазон цены',
+  rangeText = 'Стоимость за сутки пребывания в номере',
   onChange,
 }) => {
   const inputText = (val: number | number[]) => {
@@ -34,8 +33,6 @@ const Range: FC<Props> = ({
 
   const [inputValue, setInputValue] = useState(inputText(currentValue));
 
-  const { t } = useTranslation('range');
-
   const handleInput = (val: number[]): void => {
     if (onChange) {
       onChange(val);
@@ -43,7 +40,7 @@ const Range: FC<Props> = ({
   };
 
   const handleRange = (val: number | number[]): void => {
-    if (Array.isArray(val)) {
+    if (Array.isArray(val)){
       setCurrentValue(val);
       setInputValue(inputText(val));
       handleInput(val);
@@ -58,7 +55,7 @@ const Range: FC<Props> = ({
   return (
     <div className={styles.range}>
       <label className={styles.range__label}>
-        {t(labelText)}
+        {labelText}
         <input
           type="text"
           name="range"
@@ -78,7 +75,7 @@ const Range: FC<Props> = ({
         onAfterChange={handleRange}
         onChange={handleValueChange}
       />
-      <p className={styles.range__text}>{t(rangeText)}</p>
+      <p className={styles.range__text}>{rangeText}</p>
     </div>
   );
 };

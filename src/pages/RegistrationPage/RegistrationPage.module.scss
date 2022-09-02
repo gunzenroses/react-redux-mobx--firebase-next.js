@@ -1,0 +1,23 @@
+@import 'scss/utils/vars.scss';
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 683px;
+  width: 100%;
+  background: center 50% / cover no-repeat url('/assets/images/backgrounds/background-1.jpg');
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 0 5px;
+  align-items: center;
+  padding: 19px 15px;
+
+  @media (max-width: $widthPhone) {
+    margin: 0 auto;
+  }
+}

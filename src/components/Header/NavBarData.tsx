@@ -1,44 +1,44 @@
 const NavBarData = [
   {
-    title: 'aboutUs',
+    title: 'О нас',
     to: '/about',
   },
   {
-    title: 'services',
+    title: 'Услуги',
     to: '/service',
     content: [
       {
-        title: 'main',
+        title: 'Основные',
         to: '/main',
       },
       {
-        title: 'additional',
+        title: 'Дополнительные',
         to: '/additional',
       },
       {
-        title: 'special',
+        title: 'Особые',
         to: '/special',
-      },
+      }
     ],
   },
   {
-    title: 'vacancies',
+    title: 'Вакансии',
     to: '/vacancies',
   },
   {
-    title: 'news',
+    title: 'Новости',
     to: '/news',
   },
   {
-    title: 'agreements',
+    title: 'Соглашения',
     to: '/agreements',
     content: [
       {
-        title: 'userAgreement',
+        title: 'Пользовательское соглашение',
         to: '/user',
       },
       {
-        title: 'generals',
+        title: 'Общие условия',
         to: '/generals',
       },
     ],

@@ -1,9 +1,6 @@
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable import/no-unresolved */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 import { doc, setDoc, getFirestore } from 'firebase/firestore';
 
 import { fireApp } from './firebase.js';
@@ -34,8 +31,9 @@ function populateJson(rooms: Room[]) {
 fs.readFile(path.resolve(__dirname, 'rooms.json'), (err, data) => {
   if (err) {
     console.error('No such directory or file found');
-  } else if (data) {
-    const { rooms } = JSON.parse(data.toString());
+  }
+  else if (data) {
+    const rooms = JSON.parse(data.toString()).rooms;
     populateJson(rooms);
   }
-});
+})

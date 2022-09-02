@@ -1,0 +1,25 @@
+@import '../../scss/utils/vars';
+@import '../../scss/utils/font-template';
+
+.signInPage {
+  height: 48.7vw;
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-image: url('../../assets/images/backgrounds/signInPage.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% -70px;
+  background-size: auto;
+
+  @media screen and (min-width: 1500px) {
+    background-size: 100% auto;
+  }
+
+  &__container {
+    max-width: 1130px;
+    width: 100%;
+    padding: 0px 5px;
+    margin: 0px auto;
+  }
+}

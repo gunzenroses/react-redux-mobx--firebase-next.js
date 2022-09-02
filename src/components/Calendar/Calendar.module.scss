@@ -28,7 +28,6 @@
   cursor: pointer;
   user-select: none;
   @extend %body-text;
-  box-sizing: border-box;
 
   &:hover,
   &:focus-visible {
@@ -45,334 +44,332 @@
   pointer-events: none;
 }
 
-.calendar {
-  :global {
-    .air-datepicker {
+:global {
+  .air-datepicker {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+    font-size: $fontSizeLabel;
+    font-family: $fontMain;
+    background-color: #fff;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+    position: absolute;
+    top: 70px !important;
+
+    @media (max-width: $widthSmPhone) {
+      padding: 20px 10px;
+    }
+
+    --adp-day-cell-height: auto;
+    --adp-nav-height: 20px;
+    --adp-cell-background-color-selected: linear-gradient(
+      180deg,
+      #bc9cff 0%,
+      #8ba4f9 100%
+    );
+    --adp-background-color-selected-other-month: linear-gradient(
+      180deg,
+      #bc9cff 0%,
+      #8ba4f9 100%
+    );
+    --adp-background-color-selected-other-month-focused: linear-gradient(
+      180deg,
+      #bc9cff 0%,
+      #8ba4f9 100%
+    );
+    --adp-cell-background-color-in-range: rgba(188, 156, 255, 0.25);
+    --adp-cell-background-color-selected-hover: linear-gradient(
+      180deg,
+      #bc9cff 0%,
+      #8ba4f9 100%
+    );
+    --adp-cell-background-color-in-range-hover: rgba(188, 156, 255, 0.25);
+    --adp-background-color-in-range: rgba(188, 156, 255, 0.25);
+    --adp-background-color-in-range-focused: rgba(188, 156, 255, 0.25);
+    --adp-color: rgba(31, 32, 65, 0.5);
+    --adp-color-disabled: rgba(31, 32, 65, 0.5);
+    --adp-color-other-month: rgba(31, 32, 65, 0.25);
+    --adp-color-other-month-hover: #ffffff;
+    --adp-btn-color: #bc9cff;
+    --adp-btn-height: 100%;
+    --adp-nav-arrow-color: #bc9cff;
+    --adp-nav-action-size: 23px;
+    --adp-btn-color-hover: rgba(31, 32, 65, 0.5);
+    --adp-pointer-size: 0;
+
+    * {
       box-sizing: border-box;
-      width: 100%;
-      max-width: 320px;
-      padding: 20px;
+    }
+
+    @media (max-width: $widthSmPhone) {
+      --adp-day-cell-height: 30px;
+    }
+
+    &-nav--title {
+      color: $dark-shade-100;
+      font-weight: $fontWeightBold;
+      font-size: $fontSizeTitle;
+      line-height: 1.2;
+
+      @media (max-width: $widthSmPhone) {
+        font-size: 1.1rem;
+      }
+    }
+
+    &-nav--action {
+      color: $colorBrandMain;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      path:nth-child(1) {
+        fill: none;
+        stroke-width: 0;
+      }
+
+      path:nth-child(2) {
+        fill: var(--adp-nav-arrow-color);
+        stroke-width: 0;
+      }
+    }
+
+    &--navigation {
+      margin-bottom: 23px;
+    }
+
+    &-nav {
+      height: 22px;
+      padding: 0;
+      border: 0;
+    }
+
+    &--content {
+      padding: 0;
+    }
+
+    &-body--day-names {
+      margin-bottom: 0;
+    }
+
+    &-body--day-name {
+      height: 40px;
+      color: $colorBrandMain;
+      font-weight: $fontWeightBold;
+      font-size: $fontSizeLabel;
+      line-height: $lineHeightMain;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &-cell {
       font-size: $fontSizeLabel;
       font-family: $fontMain;
-      background-color: #fff;
-      border: 1px solid $dark-shade-25;
-      border-radius: 4px;
-      box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-      position: absolute;
-      top: 70px !important;
+      font-weight: $fontWeightMain;
+      aspect-ratio: 1/1;
 
-      @media (max-width: $widthSmPhone) {
-        padding: 20px 10px;
-      }
+      &.-month- {
+        aspect-ratio: auto;
 
-      --adp-day-cell-height: auto;
-      --adp-nav-height: 20px;
-      --adp-cell-background-color-selected: linear-gradient(
-        180deg,
-        #bc9cff 0%,
-        #8ba4f9 100%
-      );
-      --adp-background-color-selected-other-month: linear-gradient(
-        180deg,
-        #bc9cff 0%,
-        #8ba4f9 100%
-      );
-      --adp-background-color-selected-other-month-focused: linear-gradient(
-        180deg,
-        #bc9cff 0%,
-        #8ba4f9 100%
-      );
-      --adp-cell-background-color-in-range: rgba(188, 156, 255, 0.25);
-      --adp-cell-background-color-selected-hover: linear-gradient(
-        180deg,
-        #bc9cff 0%,
-        #8ba4f9 100%
-      );
-      --adp-cell-background-color-in-range-hover: rgba(188, 156, 255, 0.25);
-      --adp-background-color-in-range: rgba(188, 156, 255, 0.25);
-      --adp-background-color-in-range-focused: rgba(188, 156, 255, 0.25);
-      --adp-color: rgba(31, 32, 65, 0.5);
-      --adp-color-disabled: rgba(31, 32, 65, 0.5);
-      --adp-color-other-month: rgba(31, 32, 65, 0.25);
-      --adp-color-other-month-hover: #ffffff;
-      --adp-btn-color: #bc9cff;
-      --adp-btn-height: 100%;
-      --adp-nav-arrow-color: #bc9cff;
-      --adp-nav-action-size: 23px;
-      --adp-btn-color-hover: rgba(31, 32, 65, 0.5);
-      --adp-pointer-size: 0;
+        &.-current-,
+        &.-current-.-focus- {
+          color: var(--adp-color);
+          background: none;
 
-      * {
-        box-sizing: border-box;
-      }
-
-      @media (max-width: $widthSmPhone) {
-        --adp-day-cell-height: 30px;
-      }
-
-      &-nav--title {
-        color: $dark-shade-100;
-        font-weight: $fontWeightBold;
-        font-size: $fontSizeTitle;
-        line-height: 1.2;
-
-        @media (max-width: $widthSmPhone) {
-          font-size: 1.1rem;
-        }
-      }
-
-      &-nav--action {
-        color: $colorBrandMain;
-
-        svg {
-          width: 22px;
-          height: 22px;
-        }
-
-        path:nth-child(1) {
-          fill: none;
-          stroke-width: 0;
-        }
-
-        path:nth-child(2) {
-          fill: var(--adp-nav-arrow-color);
-          stroke-width: 0;
-        }
-      }
-
-      &--navigation {
-        margin-bottom: 23px;
-      }
-
-      &-nav {
-        height: 22px;
-        padding: 0;
-        border: 0;
-      }
-
-      &--content {
-        padding: 0;
-      }
-
-      &-body--day-names {
-        margin-bottom: 0;
-      }
-
-      &-body--day-name {
-        height: 40px;
-        color: $colorBrandMain;
-        font-weight: $fontWeightBold;
-        font-size: $fontSizeLabel;
-        line-height: $lineHeightMain;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      &-cell {
-        font-size: $fontSizeLabel;
-        font-family: $fontMain;
-        font-weight: $fontWeightMain;
-        aspect-ratio: 1/1;
-
-        &.-month- {
-          aspect-ratio: auto;
-
-          &.-current-,
-          &.-current-.-focus- {
-            color: var(--adp-color);
+          &::before {
             background: none;
+          }
+        }
 
-            &::before {
-              background: none;
-            }
+        &.-focus-,
+        &.-in-range- {
+          color: var(--adp-color);
+          font-weight: $fontWeightBold;
+          background: none;
+
+          &::before {
+            background: none;
+          }
+        }
+      }
+
+      &.-year- {
+        &.-current-,
+        &.-current-.-focus- {
+          color: var(--adp-color);
+          background: none;
+
+          &::before {
+            background: none;
+          }
+        }
+
+        &.-focus-.-other-decade- {
+          color: var(--adp-color);
+          font-weight: $fontWeightBold;
+          background: none;
+
+          &::before {
+            background: none;
+          }
+        }
+      }
+
+      &.-day- {
+        &.-current- {
+          color: #ffffff;
+          font-weight: 700;
+          background: $gradientSecondary;
+          border-radius: 50%;
+
+          &.-in-range- {
+            color: inherit;
+            background: var(--adp-background-color-in-range);
           }
 
           &.-focus-,
-          &.-in-range- {
-            color: var(--adp-color);
-            font-weight: $fontWeightBold;
-            background: none;
-
-            &::before {
-              background: none;
-            }
+          &.-other-month- {
+            color: #ffffff;
           }
+        }
+
+        &.-range-from-.-range-to- {
+          border-radius: 50%;
+
+          &::before {
+            background: none;
+          }
+        }
+
+        &.-range-from-,
+        &.-min-date-.-in-range- {
+          color: #ffffff;
+          font-weight: 700;
+          background: $gradientMain;
+          border-radius: 50%;
+
+          &::before {
+            position: absolute;
+            right: 0;
+            z-index: -1;
+            width: 50%;
+            height: 100%;
+            background: $gradientMain;
+            opacity: 0.25;
+            content: '';
+          }
+        }
+
+        &.-range-to-,
+        &.-other-month-.-range-to- {
+          color: #ffffff;
+          font-weight: 700;
+          background: $gradientMain;
+          border-radius: 50%;
+
+          &::before {
+            position: absolute;
+            left: 0;
+            z-index: -1;
+            width: 50%;
+            height: 100%;
+            background: $gradientMain;
+            opacity: 0.25;
+            content: '';
+          }
+        }
+
+        &.-focus-,
+        &.-min-date-.-in-range- {
+          color: #ffffff;
+          font-weight: 700;
+          background: $gradientMain;
+          border-radius: 50%;
+        }
+
+        &.-in-range- {
+          color: $dark-shade-50;
+          border-radius: 0;
+        }
+
+        &.-month- {
+          color: inherit;
+          background: none;
+          border-radius: 0;
         }
 
         &.-year- {
-          &.-current-,
-          &.-current-.-focus- {
-            color: var(--adp-color);
-            background: none;
-
-            &::before {
-              background: none;
-            }
-          }
-
-          &.-focus-.-other-decade- {
-            color: var(--adp-color);
-            font-weight: $fontWeightBold;
-            background: none;
-
-            &::before {
-              background: none;
-            }
-          }
+          color: inherit;
+          background: none;
+          border-radius: 0;
         }
 
-        &.-day- {
-          &.-current- {
-            color: #ffffff;
-            font-weight: 700;
-            background: $gradientSecondary;
-            border-radius: 50%;
+        &.-disabled-.-range-to-,
+        &.-disabled-.-range-from-,
+        &.-disabled-.-range-from-::before {
+          color: initial;
+          font-weight: initial;
+          background: none;
+          opacity: 0.3;
+        }
 
-            &.-in-range- {
-              color: inherit;
-              background: var(--adp-background-color-in-range);
-            }
+        &.-disabled-.-focus-,
+        .-other-month- &.-disabled-.-other-month- {
+          background: none;
+          font-weight: $fontWeightMain;
+        }
 
-            &.-focus-,
-            &.-other-month- {
-              color: #ffffff;
-            }
-          }
+        &.-other-month-.-disabled-.-in-range- {
+          color: var(--adp-color-other-month);
+        }
 
-          &.-range-from-.-range-to- {
-            border-radius: 50%;
+        &.-disabled-.-in-range-,
+        &.-other-month-.-disabled-.-in-range- {
+          background: none;
+        }
 
-            &::before {
-              background: none;
-            }
-          }
-
-          &.-range-from-,
-          &.-min-date-.-in-range- {
-            color: #ffffff;
-            font-weight: 700;
-            background: $gradientMain;
-            border-radius: 50%;
-
-            &::before {
-              position: absolute;
-              right: 0;
-              z-index: -1;
-              width: 50%;
-              height: 100%;
-              background: $gradientMain;
-              opacity: 0.25;
-              content: '';
-            }
-          }
-
-          &.-range-to-,
-          &.-other-month-.-range-to- {
-            color: #ffffff;
-            font-weight: 700;
-            background: $gradientMain;
-            border-radius: 50%;
-
-            &::before {
-              position: absolute;
-              left: 0;
-              z-index: -1;
-              width: 50%;
-              height: 100%;
-              background: $gradientMain;
-              opacity: 0.25;
-              content: '';
-            }
-          }
-
-          &.-focus-,
-          &.-min-date-.-in-range- {
-            color: #ffffff;
-            font-weight: 700;
-            background: $gradientMain;
-            border-radius: 50%;
-          }
-
-          &.-in-range- {
-            color: $dark-shade-50;
-            border-radius: 0;
-          }
-
-          &.-month- {
-            color: inherit;
-            background: none;
-            border-radius: 0;
-          }
-
-          &.-year- {
-            color: inherit;
-            background: none;
-            border-radius: 0;
-          }
-
-          &.-disabled-.-range-to-,
-          &.-disabled-.-range-from-,
-          &.-disabled-.-range-from-::before {
-            color: initial;
-            font-weight: initial;
-            background: none;
-            opacity: 0.3;
-          }
-
-          &.-disabled-.-focus-,
-          .-other-month- &.-disabled-.-other-month- {
-            background: none;
-            font-weight: $fontWeightMain;
-          }
-
-          &.-other-month-.-disabled-.-in-range- {
-            color: var(--adp-color-other-month);
-          }
-
-          &.-disabled-.-in-range-,
-          &.-other-month-.-disabled-.-in-range- {
-            background: none;
-          }
-
-          &.-disabled-.-focus-,
-          &.-in-range-.-focus- {
-            font-weight: $fontWeightMain;
-            opacity: 1;
-            color: var(--adp-color);
-          }
+        &.-disabled-.-focus-,
+        &.-in-range-.-focus- {
+          font-weight: $fontWeightMain;
+          opacity: 1;
+          color: var(--adp-color);
         }
 
         &.-in-range-.-focus- {
           background: var(--adp-background-color-in-range);
         }
       }
+    }
 
-      &--buttons {
-        margin-top: 20px;
-        padding: 0;
-        border: 0;
+    &--buttons {
+      margin-top: 20px;
+      padding: 0;
+      border: 0;
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-button {
+      padding: 0;
+      font-weight: $fontWeightBold;
+      font-size: $fontSizeLabel;
+      font-family: $fontMain;
+      text-transform: uppercase;
+
+      &:hover {
+        background: none;
       }
+    }
 
-      &-buttons {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      &-button {
-        padding: 0;
-        font-weight: $fontWeightBold;
-        font-size: $fontSizeLabel;
-        font-family: $fontMain;
-        text-transform: uppercase;
-
-        &:hover {
-          background: none;
-        }
-      }
-
-      &-body--day-name {
-        text-transform: none;
-      }
+    &-body--day-name {
+      text-transform: none;
     }
   }
 }

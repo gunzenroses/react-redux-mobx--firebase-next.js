@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useLayoutEffect, useState } from 'react';
 import { MdArrowBack, MdArrowForward } from 'react-icons/md';
 
 import { createPagination } from 'utils/createPagination';
@@ -15,7 +15,7 @@ type Props = {
 const PaginationList: FC<Props> = ({ page, pagesCount, onChange }) => {
   const [pageList, setPageList] = useState([1]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const array = createPagination(page, pagesCount);
     setPageList(array);
   }, [page, pagesCount]);
@@ -49,7 +49,7 @@ const PaginationList: FC<Props> = ({ page, pagesCount, onChange }) => {
       {pageList.map((item, key) => (
         <input
           readOnly
-          key={String(key.toFixed())}
+          key={String(key)}
           value={item === 0 ? '...' : item}
           className={classnames([styles.paginationList__number], {
             [styles.paginationList__number_current]: page === item,

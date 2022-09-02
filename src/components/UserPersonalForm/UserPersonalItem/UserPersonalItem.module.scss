@@ -39,7 +39,7 @@
   &__text {
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: end;
 
     @media screen and (max-width: $widthTablet) {
       justify-content: start;
@@ -77,7 +77,7 @@
     align-items: center;
 
     @media screen and (max-width: $widthTablet) {
-      align-items: flex-end;
+      align-items: end;
       padding-bottom: 10px;
     }
   }

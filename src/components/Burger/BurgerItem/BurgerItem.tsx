@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 import styles from './BurgerItem.module.scss';
 
@@ -11,10 +11,8 @@ type Props = {
 const BurgerItem: FC<Props> = ({ title, to }) => {
   return (
     <li className={styles.burgerItem}>
-      <Link href={to} passHref>
-        <a className={styles.burgerItem__link} href="replace">
-          {title}
-        </a>
+      <Link to={to} className={styles.burgerItem__link}>
+        {title}
       </Link>
     </li>
   );

@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 import cn from 'classnames';
-import { useTranslation } from 'next-i18next';
 
 import { Input } from 'components';
 
@@ -19,13 +18,16 @@ type Props = {
   onClick: () => void;
 };
 
-const DropdownInput: FC<Props> = ({ closed, output, list, onClick }) => {
+const DropdownInput: FC<Props> = ({
+  closed,
+  output,
+  list,
+  onClick,
+}) => {
   const template: TemplateConfiguration =
     typeof output.template === 'string'
       ? dropdownData[output.template]
       : output.template;
-
-  const { t } = useTranslation('dropdown');
 
   const calculateSumValue = (): number => {
     let counter = 0;
@@ -37,10 +39,24 @@ const DropdownInput: FC<Props> = ({ closed, output, list, onClick }) => {
     return counter;
   };
 
+  const getWordEnding = (value: number): number => {
+    const isSecondWordEnd = value > 1 && value < 5;
+
+    switch (true) {
+      case value === 1:
+        return 1;
+      case isSecondWordEnd:
+        return 2;
+      default:
+        return 3;
+    }
+  };
+
   const getOutput = (templateIndex: number, value: number) => {
     const wordsTemplate = template.templates;
     const wordRoot = wordsTemplate[templateIndex][0];
-    return value ? `${value} ${t(wordRoot, { count: value })}` : '';
+    const endOfWord = wordsTemplate[templateIndex][getWordEnding(value)];
+    return value ? `${value} ${wordRoot}${endOfWord}` : '';
   };
 
   const prepareSequentialOutput = (): string => {
@@ -74,7 +90,7 @@ const DropdownInput: FC<Props> = ({ closed, output, list, onClick }) => {
 
   const prepareOutputValue = (): string => {
     const totalValue = calculateSumValue();
-    if (totalValue === 0) return `${t(template.default)}`;
+    if (totalValue === 0) return `${template.default}`;
 
     switch (output.type) {
       case 'twoAndOne':
@@ -94,7 +110,7 @@ const DropdownInput: FC<Props> = ({ closed, output, list, onClick }) => {
       role="button"
       tabIndex={0}
     >
-      <Input isReadOnly parentValue={prepareOutputValue()} isOpen={!closed} />
+      <Input isReadOnly parentValue={prepareOutputValue()} isOpen={!closed}/>
       <span className={styles.roomDropdownInput__iconWrapper}>
         <FiChevronDown
           className={cn(styles.roomDropdownInput__icon, {

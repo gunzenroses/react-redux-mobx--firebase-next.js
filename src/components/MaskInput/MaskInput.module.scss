@@ -13,7 +13,6 @@
   background-color: transparent;
   text-overflow: ellipsis;
   outline: none;
-  box-sizing: border-box;
 
   &::placeholder {
     color: $dark-shade-25;

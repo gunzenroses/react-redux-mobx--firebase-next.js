@@ -14,7 +14,7 @@
 .title {
   @extend %widget-text;
   margin: 0;
-  letter-spacing: 0.001em;
+  letter-spacing: .001em
 }
 
 .pagination {
@@ -36,7 +36,7 @@
   margin: 0;
   font-size: $fontSizeMain;
   font-weight: $fontWeightMain;
-  letter-spacing: 0.002em;
+  letter-spacing: .002em;
   color: $dark-shade-50;
   text-align: right;
   user-select: none;

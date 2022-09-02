@@ -1,20 +1,13 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import { useTranslation } from 'next-i18next';
 
 import { SideBar } from 'components/SideBar/SideBar';
 
 import styles from './SideBarDropdown.module.scss';
 
-type Props = {
-  freeDays: FreeDays;
-  guests: Guests;
-};
-
-const SideBarDropdown: FC<Props> = ({ freeDays, guests }) => {
+const SideBarDropdown = () => {
   const [hidden, setHidden] = useState(true);
   const sidebar = useRef(null);
-  const { t } = useTranslation('room-search');
 
   useEffect(() => {
     const handleDocumentClick = (event: Event): void => {
@@ -41,12 +34,12 @@ const SideBarDropdown: FC<Props> = ({ freeDays, guests }) => {
         role="button"
         tabIndex={0}
       >
-        {t('filter')}
+        Фильтры для поиска
         {hidden ? <FiChevronDown /> : <FiChevronUp />}
       </span>
       {!hidden && (
         <div className={styles.SideBarDropdown__content}>
-          <SideBar freeDays={freeDays} guests={guests} />
+          <SideBar />
         </div>
       )}
     </div>

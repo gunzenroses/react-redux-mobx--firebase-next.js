@@ -22,7 +22,7 @@ const Input: FC<Props> = ({
   withArrow = false,
   parentValue = undefined,
   onChange = () => {},
-  name = '',
+  name = ''
 }) => {
   const handleInputOnChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -38,7 +38,7 @@ const Input: FC<Props> = ({
         className={classnames([styles.input], {
           [styles.input_withArrow]: withArrow,
           [styles.input_isReadonly]: isReadOnly,
-          [styles.input_isOpen]: isOpen,
+          [styles.input_isOpen]: isOpen
         })}
         name={name}
         type={type}

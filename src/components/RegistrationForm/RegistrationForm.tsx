@@ -1,6 +1,5 @@
-import { FC, FormEvent, useState } from 'react';
+import React, { FC, FormEvent, useState } from 'react';
 import cn from 'classnames';
-import { useTranslation } from 'next-i18next';
 
 import { Input, RadioButtonGroup, Toggle, Button, MaskInput } from 'components';
 
@@ -21,7 +20,6 @@ const RegistrationForm: FC<Props> = ({ handleOnSubmit }) => {
   ): void => {
     setEmail(e.target.value);
   };
-  const { t } = useTranslation('registration-form');
 
   const [password, setPassword] = useState('');
   const handleInputPasswordOnChange = (
@@ -31,7 +29,7 @@ const RegistrationForm: FC<Props> = ({ handleOnSubmit }) => {
   };
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget as HTMLFormElement);
+    const formData = new FormData(e.currentTarget as HTMLFormElement)
     const data: RegistrationData = Object.fromEntries(
       formData
     ) as RegistrationData;
@@ -40,27 +38,27 @@ const RegistrationForm: FC<Props> = ({ handleOnSubmit }) => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <h3 className={styles.title}>{t('title')}</h3>
+      <h3 className={styles.title}>Регистрация аккаунта</h3>
       <div className={cn(styles.wrapper, styles.wrapper_xl)}>
-        <Input placeholder={t('name')} name="name" />
-        <Input placeholder={t('surname')} name="surname" />
+        <Input placeholder="Имя" name="name"/>
+        <Input placeholder="Фамилия" name="surname"/>
         <RadioButtonGroup
           buttonsProps={[
-            { name: 'gender', text: t('male'), value: 'male' },
-            { name: 'gender', text: t('female'), value: 'female' },
+            { name: 'gender', text: 'Мужчина', value: 'male' },
+            { name: 'gender', text: 'Женщина', value: 'female' },
           ]}
           active="male"
         />
       </div>
       <div className={cn(styles.wrapper, styles.wrapper_m)}>
         <div className={styles.inputWrapper}>
-          <span className={styles.label}>{t('birthday')}</span>
-          <MaskInput name="birthday" />
+          <span className={styles.label}>дата рождения</span>
+          <MaskInput name='birthday'/>
         </div>
       </div>
       <div className={cn(styles.wrapper, styles.wrapper_m)}>
         <div className={styles.inputWrapper}>
-          <span className={styles.label}>{t('loginInformation')}</span>
+          <span className={styles.label}>данные для входа в сервис</span>
           <Input
             placeholder="Email"
             type="email"
@@ -68,19 +66,19 @@ const RegistrationForm: FC<Props> = ({ handleOnSubmit }) => {
           />
         </div>
         <Input
-          placeholder={t('password')}
+          placeholder="Пароль"
           type="password"
           onChange={handleInputPasswordOnChange}
         />
-        <Toggle text={t('specOffers')} name="getSpecOffers" />
+        <Toggle text="Получать спецпредложения" name='getSpecOffers'/>
       </div>
       <div className={styles.buttonWrapper}>
-        <Button type="submit">{t('buttonSignUp')}</Button>
+        <Button type="submit">зарегистрироваться</Button>
       </div>
       <div className={styles.login}>
-        <span className={styles.text}>{t('login')}</span>
+        <span className={styles.text}>Уже есть аккаунт на Toxin</span>
         <Button type="signIn" href="/sign-in">
-          {t('buttonSignIn')}
+          Войти
         </Button>
       </div>
     </form>

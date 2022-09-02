@@ -5,10 +5,9 @@ import {
   query,
   Firestore,
   where,
-  limit,
 } from 'firebase/firestore';
 
-import { checkIsRoomSuitable } from 'utils/checkIsRoomSuitable';
+import { checkIsRoomSuitable } from "utils/checkIsRoomSuitable";
 
 import { fireApp } from '../firebase';
 
@@ -25,7 +24,6 @@ class ApiRooms {
       roomCollection,
       where('price', '>=', Number(filters.price.from)),
       where('price', '<=', Number(filters.price.to)),
-      limit(20)
     );
 
     const querySnapshot = await getDocs(q);
@@ -39,31 +37,27 @@ class ApiRooms {
     return rooms;
   };
 
-  private static filterRooms = (room: Room, filters: Filters): Room | null => {
+  private static filterRooms = (
+    room: Room,
+    filters: Filters
+  ): Room | null => {
     let result: Room | null = room;
 
-    const filterInappropriateNumber = (
-      key: keyof Filters,
-      subKey: keyof InnerFilters
-    ) => {
-      const isNotActualFilter =
-        filters[key][subKey] === false ||
-        filters[key][subKey] === 0 ||
-        filters[key][subKey] === null ||
-        filters[key][subKey] === undefined ||
-        key === 'price';
+    const filterInappropriateNumber = (key: keyof Filters, subKey: keyof InnerFilters) => {
+      const isNotActualFilter = filters[key][subKey] === false
+        || filters[key][subKey] === 0
+        || filters[key][subKey] === null
+        || filters[key][subKey] === undefined
+        || key === 'price';
 
       if (isNotActualFilter) return;
 
-      if (
-        checkIsRoomSuitable({
-          room,
-          filters,
-          key,
-          subKey,
-        })
-      )
-        result = null;
+      if (checkIsRoomSuitable({
+        room,
+        filters,
+        key,
+        subKey
+      })) result = null;
     };
 
     Object.keys(filters).forEach((key) => {

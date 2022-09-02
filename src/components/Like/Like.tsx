@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC } from "react";
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import cn from 'classnames';
 
@@ -22,19 +22,11 @@ const Like: FC<Props> = ({ likes, isPressed = false, onClick }) => {
       })}
     >
       {isPressed ? (
-        <AiFillHeart
-          data-testid="Like-fill-heart"
-          className={styles.like__icon}
-        />
+        <AiFillHeart className={styles.like__icon} />
       ) : (
-        <AiOutlineHeart
-          data-testid="Like-Outline-heart"
-          className={styles.like__icon}
-        />
+        <AiOutlineHeart className={styles.like__icon} />
       )}
-      <p data-testid="Like-counter" className={styles.like__count}>
-        {likes}
-      </p>
+      <p className={styles.like__count}>{likes}</p>
     </div>
   );
 };

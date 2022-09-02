@@ -33,17 +33,9 @@
     justify-content: space-between;
     align-items: baseline;
 
-    &Info {
-      font-weight: bold;
-    }
-
     &Sign {
       font-size: 14px;
       padding-right: 3px;
-    }
-
-    &Number {
-      font-size: 24px;
     }
 
     &Type {
@@ -79,5 +71,5 @@
   &__alert {
     @extend %body-text;
     padding: 30px;
-  }
+  }  
 }

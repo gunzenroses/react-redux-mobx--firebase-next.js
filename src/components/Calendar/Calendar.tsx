@@ -2,33 +2,23 @@ import { FC, useEffect, useMemo, useRef, useCallback } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import AirDatepicker, { AirDatepickerOptions } from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
-import localeEn from 'air-datepicker/locale/en';
-import localeRu from 'air-datepicker/locale/ru';
 import { MdExpandMore, MdArrowForward, MdArrowBack } from 'react-icons/md';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 
 import styles from './Calendar.module.scss';
 
 type Props = {
   mode: 'single' | 'twin';
-  selectedDates?: FreeDays;
+  selectedDates?: [Date, Date];
   onSelectedDate?: (date: Date[]) => void;
 };
 
-const Calendar: FC<Props> = ({
-  mode,
-  selectedDates,
-  onSelectedDate = () => {},
-}) => {
+const Calendar: FC<Props> = ({ mode, selectedDates, onSelectedDate = () => {} }) => {
   const firstInput = useRef<HTMLInputElement>(null);
   const secondInput = useRef<HTMLInputElement>(null);
   const dpContainer = useRef(null);
   const datePicker = useRef<AirDatepicker>();
   const forwardIcon = ReactDOMServer.renderToString(<MdArrowForward />);
   const backIcon = ReactDOMServer.renderToString(<MdArrowBack />);
-  const { t } = useTranslation('calendar');
-  const { locale } = useRouter();
 
   const inputHandler = () => {
     if (!datePicker.current?.$datepicker.isConnected && datePicker.current) {
@@ -56,7 +46,7 @@ const Calendar: FC<Props> = ({
       buttons: [
         {
           content: () => {
-            return t('btnClear');
+            return 'очистить';
           },
           onClick: (dp) => {
             dp.clear();
@@ -68,7 +58,7 @@ const Calendar: FC<Props> = ({
         },
         {
           content: () => {
-            return t('btnApply');
+            return 'применить';
           },
           onClick: (dp) => {
             dp.hide();
@@ -85,17 +75,14 @@ const Calendar: FC<Props> = ({
         document.removeEventListener('pointerdown', hideCalendar);
       },
     };
-  }, [backIcon, forwardIcon, onSelectedDate, t]);
-
-  const wrapDispatchCallback = useCallback(
-    (date: Date | Date[]) => {
-      const isTwoDates = Array.isArray(date) && date.length === 2;
-      if (isTwoDates && onSelectedDate) {
-        onSelectedDate(date);
-      }
-    },
-    [onSelectedDate]
-  );
+  }, [backIcon, forwardIcon, onSelectedDate]);
+  
+  const wrapDispatchCallback = useCallback((date: Date | Date[]) => {
+    const isTwoDates = Array.isArray(date) && date.length === 2;
+    if (isTwoDates && onSelectedDate) {
+      onSelectedDate(date);
+    }
+  }, [onSelectedDate])
 
   const createSingle = useCallback(
     (input: HTMLInputElement, container: HTMLElement) => {
@@ -133,42 +120,28 @@ const Calendar: FC<Props> = ({
     [defaultOptions, wrapDispatchCallback]
   );
 
-  const selectDates = (dates: FreeDays) => {
-    if (dates.from && dates.to && datePicker.current) {
-      datePicker.current.selectDate([new Date(dates.from), new Date(dates.to)]);
-    }
+  const selectDates = (dates: [Date, Date]) => {
+    datePicker.current?.selectDate(dates);
   };
 
   useEffect(() => {
-    new Promise((resolve) => {
-      if (firstInput.current && dpContainer.current) {
-        resolve(
-          (datePicker.current =
-            mode === 'single'
-              ? createSingle(firstInput.current, dpContainer.current)
-              : createTwin(firstInput.current, dpContainer.current))
-        );
-      }
-    }).then(() => {
-      if (selectedDates) {
-        selectDates(selectedDates);
-      }
-    });
-    return () => datePicker.current?.destroy();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    datePicker.current?.update({
-      locale: locale === 'ru' ? localeRu : localeEn,
-    });
-  }, [locale]);
+    if (firstInput.current && dpContainer.current) {
+      datePicker.current =
+        mode === 'single'
+          ? createSingle(firstInput.current, dpContainer.current)
+          : createTwin(firstInput.current, dpContainer.current);
+    }
+    if (selectedDates) {
+      selectDates(selectedDates);
+    }
+    return () => datePicker.current && datePicker.current.destroy();
+  }, [createSingle, createTwin, mode, selectedDates]);
 
   const firstInputLabel =
-    mode === 'twin' ? t('labelFirstTwin') : t('labelFirstSingle');
+    mode === 'twin' ? 'прибытие' : 'даты пребывания в отеле';
 
   const firstInputPlaceholder =
-    mode === 'twin' ? t('placeholderTwin') : t('placeholderSingle');
+    mode === 'twin' ? 'ДД.ММ.ГГГГ' : 'ДД.ММ - ДД.ММ';
 
   return (
     <div className={styles.calendar}>
@@ -176,7 +149,7 @@ const Calendar: FC<Props> = ({
         <label className={styles.label}>
           {firstInputLabel}
           <input
-            type="text"
+            type='text'
             placeholder={firstInputPlaceholder}
             ref={firstInput}
             className={styles.input}
@@ -187,10 +160,10 @@ const Calendar: FC<Props> = ({
         </label>
         {mode === 'twin' && (
           <label className={styles.label}>
-            {t('labelSecond')}
+            выезд
             <input
-              type="text"
-              placeholder={t('placeholderTwin')}
+              type='text'
+              placeholder='ДД.ММ.ГГГГ'
               ref={secondInput}
               className={styles.input}
               readOnly

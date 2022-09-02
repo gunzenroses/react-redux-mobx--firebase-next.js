@@ -2,59 +2,59 @@
 @import 'scss/utils/vars.scss';
 
 .comment {
-  max-width: 712px;
-  width: 100%;
-
-  & + .comment {
-    margin-top: 20px;
-  }
-
-  &__info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 11px;
-    margin-left: 2px;
-  }
-
-  &__img {
-    border-radius: 50%;
+    max-width: 712px;
     width: 100%;
-    height: 100%;
 
-    &Wrapper {
-      width: 44px;
-      height: 44px;
-      filter: drop-shadow(0 10px 20px rgb(31 32 65 / 10%));
-      border-radius: 32px;
-      margin-right: 11px;
+    & + .comment {
+        margin-top: 20px;
     }
-  }
 
-  &Inner {
-    padding: 2px 0 0 2px;
-  }
+    &__info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 11px;
+        margin-left: 2px;
+    }
 
-  &__content {
-    display: flex;
-    margin-left: 4px;
-  }
+    &__img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
 
-  &__author {
-    @extend %body-text;
+        &Wrapper {
+            width: 44px;
+            height: 44px;
+            filter: drop-shadow(0 10px 20px rgb(31 32 65 / 10%));
+            border-radius: 32px;
+            margin-right: 11px;
+        }
+    }
 
-    margin: 0;
-    font-weight: bold;
-  }
+    &Inner {
+        padding: 2px 0 0 2px;
+    }
 
-  &__time {
-    @extend %body-text;
-    margin: 0;
-  }
+    &__content {
+        display: flex;
+        margin-left: 4px;
+    }
 
-  &__text {
-    @extend %body-text;
+    &__author {
+        @extend %body-text;
 
-    padding: 0;
-    margin: 0 0 0 15px;
-  }
+        margin: 0;
+        font-weight: bold;
+    }
+
+    &__time {
+        @extend %body-text;
+        margin: 0;
+    }
+
+    &__text {
+        @extend %body-text;
+
+        padding: 0;
+        margin: 0 0 0 15px;
+    }
 }

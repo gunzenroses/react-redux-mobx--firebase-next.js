@@ -1,0 +1,122 @@
+@import 'scss/utils/vars';
+@import 'scss/utils/font-template';
+
+.roomSearchPage {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $dark-shade-25;
+  padding: 30px 5px 6px;
+
+  &__content {
+    min-height: 1320px;
+    display: flex;
+    column-gap: 60px;
+    max-width: 1160px;
+    min-width: 320px;
+    width: 100%;
+
+    @media (max-width: $widthSmDesktop) {
+      flex-direction: column;
+      row-gap: 40px;
+    }
+  }
+
+  &__roomsTitle {
+    @extend %sub-section-title;
+    display: flex;
+    font-size: $fontSizeSubSection;
+    margin: 0;
+    line-height: 30px;
+
+    @media (max-width: $widthSmDesktop) {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__roomsContent {
+    flex-grow: 1;
+
+    @media (max-width: $widthSmDesktop) {
+      justify-content: center;
+    }
+  }
+
+  &__rooms {
+    display: flex;
+    flex-direction: column;
+    row-gap: 21px;
+    flex-grow: 1;
+
+    @media (max-width: 1170px) {
+      align-items: center;
+    }
+  }
+
+  &__roomsContent {
+    display: grid;
+    flex-grow: 0;
+    min-height: 1080px;
+    grid-template-columns: repeat(auto-fill, 270px);
+    grid-template-rows: repeat(auto-fill, minmax(257px, 1fr));
+    grid-gap: 19px 12px;
+
+    @media (max-width: 1170px) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__pagination {
+    margin: 20px 304px 40px auto;
+
+    @media (max-width: $widthSmDesktop) {
+      margin: 20px auto 70px;
+    }
+  }
+
+  &__sidebar {
+    max-width: 266px;
+
+    @media (max-width: $widthSmDesktop) {
+      max-width: 100%;
+    }
+  }
+
+  &__sidebarWrapper {
+    @media (max-width: $widthSmDesktop) {
+      display: none;
+    }
+  }
+
+  &__sidebarDropdownWrapper {
+    display: none;
+
+    @media (max-width: $widthSmDesktop) {
+      display: block;
+    }
+  }
+
+  &__loading {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    font-size: 70px;
+    margin-top: 150px;
+    color: $colorBrandMain;
+    animation-name: loading;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

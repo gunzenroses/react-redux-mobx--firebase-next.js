@@ -1,8 +1,7 @@
-import { FC, useEffect } from 'react';
+import {FC, useEffect} from 'react';
 import classnames from 'classnames';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import { useTranslation } from 'next-i18next';
 
 import styles from './Calculation.module.scss';
 
@@ -25,15 +24,14 @@ const Calculation: FC<Props> = ({
 }) => {
   const totalCost = (): number => {
     let cost = price * days;
-    if (cost > 0) cost += serviceCharge + additionalFees;
+    if (cost > 0) cost += serviceCharge + additionalFees
     return cost >= discount ? cost - discount : cost;
   };
   const totalCostValue = totalCost();
-  const { t } = useTranslation('room-form');
-
+  
   useEffect(() => {
-    countCost(totalCostValue);
-  }, [countCost, totalCostValue]);
+    countCost(totalCostValue)
+  }, [countCost, totalCostValue])
 
   return (
     <div className={styles.calculation}>
@@ -44,7 +42,7 @@ const Calculation: FC<Props> = ({
           })}
         >
           <div className={styles.calculation__daysPriceText}>
-            {price.toLocaleString()}₽ х {days} {t('day', { count: days })}
+            {price.toLocaleString()}₽ х {days} суток
           </div>
           <div className={styles.calculation__cost}>
             {(price * days).toLocaleString()}₽
@@ -52,27 +50,8 @@ const Calculation: FC<Props> = ({
         </div>
         <div className={styles.calculation__row}>
           <div className={styles.calculation__serviceText}>
-            {t('charge')}
-            {discount
-              ? `: ${t('discount')}  ${discount.toLocaleString()}₽`
-              : ''}
-          </div>
-          <Popup
-            trigger={
-              <button type="button" className={styles.calculation__info}>
-                i
-              </button>
-            }
-          >
-            <div className={styles.calculation__infoText}>{t('infoFirst')}</div>
-          </Popup>
-          <div className={styles.calculation__cost}>
-            {serviceCharge.toLocaleString()}₽
-          </div>
-        </div>
-        <div className={styles.calculation__row}>
-          <div className={styles.calculation__additionalText}>
-            {t('additionalCharge')}
+            Сбор за услуги
+            {discount ? `: скидка  ${discount.toLocaleString()}₽` : ''}
           </div>
           <Popup
             trigger={
@@ -82,14 +61,33 @@ const Calculation: FC<Props> = ({
             }
           >
             <div className={styles.calculation__infoText}>
-              {t('infoSecond')}
+              Предоставляется при бронировании до конца месяца
+            </div>
+          </Popup>
+          <div className={styles.calculation__cost}>
+            {serviceCharge.toLocaleString()}₽
+          </div>
+        </div>
+        <div className={styles.calculation__row}>
+          <div className={styles.calculation__additionalText}>
+            Сбор за дополнительные услуги
+          </div>
+          <Popup
+            trigger={
+              <button type="button" className={styles.calculation__info}>
+                i
+              </button>
+            }
+          >
+            <div className={styles.calculation__infoText}>
+              Включает в себя обязательное страхование
             </div>
           </Popup>
           <div className={styles.calculation__cost}>{additionalFees}₽</div>
         </div>
       </div>
       <div className={styles.calculation__total}>
-        <div className={styles.calculation__totalText}>{t('total')}</div>
+        <div className={styles.calculation__totalText}>Итого</div>
         <div className={styles.calculation__totalDots}> </div>
         <div className={styles.calculation__totalCost}>
           {totalCostValue.toLocaleString()}₽

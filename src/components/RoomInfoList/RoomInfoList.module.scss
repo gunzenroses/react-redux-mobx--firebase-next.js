@@ -1,11 +1,11 @@
 @import 'scss/utils/font-template.scss';
 
 .RoomInfoList {
-  max-width: 280px;
-  width: 100%;
+    max-width: 280px;
+    width: 100%;
 
-  &__title {
-    @extend %widget-text;
-    margin: 0 0 3px;
-  }
+    &__title {
+        @extend %widget-text;
+        margin: 0 0 3px;
+    }
 }

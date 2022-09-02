@@ -8,7 +8,6 @@ import {
 import { BurgerItem, Props as BurgerItemProps } from './BurgerItem/BurgerItem';
 import styles from './Burger.module.scss';
 import { UserMenu } from '../UserMenu/UserMenu';
-import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 
 type Props = {
   items: (BurgerItemProps | AccordionProps)[];
@@ -56,12 +55,13 @@ const Burger: FC<Props> = ({ items, profileName = '' }) => {
                   key={key.toFixed()}
                 />
               ) : (
-                <BurgerItem title={item.title} to={item.to} key={String(key.toFixed())} />
+                <BurgerItem
+                  title={item.title}
+                  to={item.to}
+                  key={String(key.toFixed())}
+                />
               );
             })}
-            <div className={styles.burger__langSwitcher}>
-              <LanguageSwitcher />
-            </div>
             <div className={styles.burger__contentButtons}>
               <UserMenu profileName={profileName} inBurger />
             </div>

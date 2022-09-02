@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { MdArrowForward } from 'react-icons/md';
 import classNames from 'classnames/bind';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 import styles from './Button.module.scss';
 
@@ -51,10 +51,8 @@ const Button: FC<Props> = ({
       <span className={styles.button_type_signInText}>{children}</span>
     </button>
   ) : (
-    <Link href={href}>
-      <a className={buttonClass}>
-        <span className={styles.button_type_signInText}>{children}</span>
-      </a>
+    <Link to={href || ''} className={buttonClass} onClick={onClick}>
+      <span className={styles.button_type_signInText}>{children}</span>
     </Link>
   );
 };

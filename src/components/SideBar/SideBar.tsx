@@ -1,5 +1,5 @@
-import { FC, useCallback, useEffect, useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import { observer } from "mobx-react-lite";
+import {useCallback, useEffect, useState} from 'react';
 
 import {
   Calendar,
@@ -8,34 +8,18 @@ import {
   ConfigurationDropdown,
   Range,
 } from 'components';
-import {
-  selectSearchFilters,
-  updateAccessibility,
-  updateAdditionalFacilities,
-  updateFreeDays,
-  updateGuests,
-  updatePrice,
-  updateRoomAmenities,
-  updateRules,
-} from 'redux/slices/searchFiltersSlice';
-import { useAppDispatch, useAppSelector } from 'hooks/hooks';
+import { useMobxStore } from 'hooks/hooks';
 
 import styles from './SideBar.module.scss';
 
-type Props = {
-  freeDays: FreeDays;
-  guests: Guests;
-};
-
-const SideBar: FC<Props> = ({ freeDays, guests }) => {
-  const dispatch = useAppDispatch();
-  const filters = useAppSelector(selectSearchFilters);
+const SideBar = observer(() => {
+  const { filterStore } = useMobxStore()
+  const { filters } = filterStore;
   const [additionalFacilities, setAdditionalFacilities] = useState(
     filters.additionalFacilities
   );
   const [rules, setRules] = useState(filters.rules);
   const [accessibility, setAccessibility] = useState(filters.accessibility);
-  const { t } = useTranslation('room-search');
 
   useEffect(() => {
     const newAccessibility = filters.accessibility;
@@ -58,30 +42,27 @@ const SideBar: FC<Props> = ({ freeDays, guests }) => {
   const onAccessibilityInputChange = (item: {
     [itemId: string]: boolean;
   }): void => {
-    dispatch(updateAccessibility(item));
+    filterStore.updateAccessibility(item);
   };
 
   const onExtrasInputChange = (item: { [itemId: string]: boolean }): void => {
-    dispatch(updateAdditionalFacilities(item));
+    filterStore.updateAdditionalFacilities(item);
   };
 
-  const onSelectedDaysChange = useCallback(
-    (date: Date[]) => {
-      const selectedDates = {
-        from: date[0] ? date[0].toISOString() : null,
-        to: date[1] ? date[1].toISOString() : null,
-      };
-      dispatch(updateFreeDays(selectedDates));
-    },
-    [dispatch]
-  );
+  const onSelectedDaysChange = useCallback((date: Date[]) => {
+    const selectedDates = {
+      from: date[0] ? date[0].toISOString() : null,
+      to: date[1] ? date[1].toISOString() : null,
+    };
+    filterStore.updateFreeDays(selectedDates);
+  }, [filterStore]);
 
-  const onGuestsChange = (content: Content) => {
-    dispatch(updateGuests(content as Guests));
+  const onGuestsChange = (content: any) => {
+    filterStore.updateGuests(content);
   };
 
-  const onRoomAmenitiesChange = (content: Content) => {
-    dispatch(updateRoomAmenities(content as RoomAmenities));
+  const onRoomAmenitiesChange = (content: any) => {
+    filterStore.updateRoomAmenities(content);
   };
 
   const onRangeChange = (value: number[]): void => {
@@ -89,27 +70,22 @@ const SideBar: FC<Props> = ({ freeDays, guests }) => {
       from: value[0],
       to: value[1],
     };
-    dispatch(updatePrice(newPrice));
+    filterStore.updatePrice(newPrice);
   };
 
   const onRulesInputChange = (item: { [itemId: string]: boolean }): void => {
-    dispatch(updateRules(item));
+    filterStore.updateRules(item);
   };
 
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebar__calendar}>
-        <Calendar
-          mode="single"
-          onSelectedDate={onSelectedDaysChange}
-          selectedDates={freeDays}
-        />
+        <Calendar mode="single" onSelectedDate={onSelectedDaysChange} />
       </div>
       <div className={styles.sidebar__guests}>
         <ConfigurationDropdown
-          title="guestsTitle"
+          title="гости"
           type="twoAndOne"
-          initialContent={guests}
           onChange={onGuestsChange}
         />
       </div>
@@ -117,7 +93,7 @@ const SideBar: FC<Props> = ({ freeDays, guests }) => {
         <Range onChange={onRangeChange} />
       </div>
       <div className={styles.sidebar__rules}>
-        <p className={styles.sidebar__subTitle}>{t('rules')}</p>
+        <p className={styles.sidebar__subTitle}>правила дома</p>
         <div className={styles.sidebar__rulesContainer}>
           <CheckboxList
             items={rules}
@@ -127,7 +103,7 @@ const SideBar: FC<Props> = ({ freeDays, guests }) => {
         </div>
       </div>
       <div className={styles.sidebar__accessibility}>
-        <p className={styles.sidebar__subTitle}>{t('accessability')}</p>
+        <p className={styles.sidebar__subTitle}>доступность</p>
         <div className={styles.sidebar__accessibilityContainer}>
           <CheckboxList
             items={accessibility}
@@ -138,7 +114,7 @@ const SideBar: FC<Props> = ({ freeDays, guests }) => {
       </div>
       <div className={styles.sidebar__roomConfig}>
         <ConfigurationDropdown
-          title="amenitiesTitle"
+          title="удобства номера"
           template="rooms"
           type="sequential"
           onChange={onRoomAmenitiesChange}
@@ -146,7 +122,6 @@ const SideBar: FC<Props> = ({ freeDays, guests }) => {
       </div>
       <div className={styles.sidebar__extras}>
         <CheckboxDropdown
-          titleText={t('additionalAmenities')}
           items={additionalFacilities}
           type="additionalFacilities"
           onChange={onExtrasInputChange}
@@ -154,6 +129,6 @@ const SideBar: FC<Props> = ({ freeDays, guests }) => {
       </div>
     </div>
   );
-};
+});
 
 export { SideBar };

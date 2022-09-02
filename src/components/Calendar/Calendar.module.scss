@@ -54,10 +54,10 @@
       padding: 20px;
       font-size: $fontSizeLabel;
       font-family: $fontMain;
-      background-color: #fff;
+      background-color: $colorBackground;
       border: 1px solid $dark-shade-25;
       border-radius: 4px;
-      box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+      box-shadow: 0 10px 20px $dark-shade-5;
       position: absolute;
       top: 70px !important;
 
@@ -67,39 +67,23 @@
 
       --adp-day-cell-height: auto;
       --adp-nav-height: 20px;
-      --adp-cell-background-color-selected: linear-gradient(
-        180deg,
-        #bc9cff 0%,
-        #8ba4f9 100%
-      );
-      --adp-background-color-selected-other-month: linear-gradient(
-        180deg,
-        #bc9cff 0%,
-        #8ba4f9 100%
-      );
-      --adp-background-color-selected-other-month-focused: linear-gradient(
-        180deg,
-        #bc9cff 0%,
-        #8ba4f9 100%
-      );
-      --adp-cell-background-color-in-range: rgba(188, 156, 255, 0.25);
-      --adp-cell-background-color-selected-hover: linear-gradient(
-        180deg,
-        #bc9cff 0%,
-        #8ba4f9 100%
-      );
-      --adp-cell-background-color-in-range-hover: rgba(188, 156, 255, 0.25);
-      --adp-background-color-in-range: rgba(188, 156, 255, 0.25);
-      --adp-background-color-in-range-focused: rgba(188, 156, 255, 0.25);
-      --adp-color: rgba(31, 32, 65, 0.5);
-      --adp-color-disabled: rgba(31, 32, 65, 0.5);
-      --adp-color-other-month: rgba(31, 32, 65, 0.25);
-      --adp-color-other-month-hover: #ffffff;
-      --adp-btn-color: #bc9cff;
+      --adp-cell-background-color-selected: $gradientMain;
+      --adp-background-color-selected-other-month: $gradientMain;
+      --adp-background-color-selected-other-month-focused: $gradientMain;
+      --adp-cell-background-color-in-range: $dark-shale-alt;
+      --adp-cell-background-color-selected-hover: $gradientMain;
+      --adp-cell-background-color-in-range-hover: $dark-shale-alt;
+      --adp-background-color-in-range: $dark-shale-alt;
+      --adp-background-color-in-range-focused: $dark-shale-alt;
+      --adp-color: $dark-shade-50;
+      --adp-color-disabled: $dark-shade-50;
+      --adp-color-other-month: $dark-shade-25;
+      --adp-color-other-month-hover: $colorBackground;
+      --adp-btn-color: $colorBrandMain;
       --adp-btn-height: 100%;
-      --adp-nav-arrow-color: #bc9cff;
+      --adp-nav-arrow-color: $colorBrandMain;
       --adp-nav-action-size: 23px;
-      --adp-btn-color-hover: rgba(31, 32, 65, 0.5);
+      --adp-btn-color-hover: $dark-shade-50;
       --adp-pointer-size: 0;
 
       * {
@@ -223,7 +207,7 @@
 
         &.-day- {
           &.-current- {
-            color: #ffffff;
+            color: $colorBackground;
             font-weight: 700;
             background: $gradientSecondary;
             border-radius: 50%;
@@ -235,7 +219,7 @@
 
             &.-focus-,
             &.-other-month- {
-              color: #ffffff;
+              color: $colorBackground;
             }
           }
 
@@ -249,7 +233,7 @@
 
           &.-range-from-,
           &.-min-date-.-in-range- {
-            color: #ffffff;
+            color: $colorBackground;
             font-weight: 700;
             background: $gradientMain;
             border-radius: 50%;
@@ -268,7 +252,7 @@
 
           &.-range-to-,
           &.-other-month-.-range-to- {
-            color: #ffffff;
+            color: $colorBackground;
             font-weight: 700;
             background: $gradientMain;
             border-radius: 50%;
@@ -287,7 +271,7 @@
 
           &.-focus-,
           &.-min-date-.-in-range- {
-            color: #ffffff;
+            color: $colorBackground;
             font-weight: 700;
             background: $gradientMain;
             border-radius: 50%;

@@ -3,11 +3,11 @@
 
 .landing {
   background-image: url('/assets/images/backgrounds/landingBackground.jpg');
-  background-position: center bottom;
+  background-position: left -69px;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 70px;
-  padding-bottom: 386px;
+  padding-top: 66px;
+  padding-bottom: 389px;
 
   @media (max-width: $widthSmDesktop) {
     height: 560px;

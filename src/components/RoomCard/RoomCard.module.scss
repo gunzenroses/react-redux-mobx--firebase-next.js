@@ -9,8 +9,8 @@
   height: fit-content;
 
   &__content {
-    padding: 16px 20px 14px;
-    background: #fff;
+    padding: 10px 20px 14px;
+    background: $colorBackground;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
   }
@@ -159,7 +159,7 @@
     }
 
     .carousel .control-dots .dot {
-      border: 1px solid #fff;
+      border: 1px solid $colorBackground;
       box-shadow: none;
       background: none;
       margin: 0 1.5px;
@@ -167,7 +167,7 @@
     }
 
     .carousel .control-dots .dot.selected {
-      background: #ffffff;
+      background: $colorBackground;
     }
 
     .carousel .control-arrow,
@@ -187,7 +187,7 @@
       border-bottom: none;
       border-left: none;
       position: relative;
-      background-color: #fff;
+      background-color: $colorBackground;
       width: 2px;
       height: 10px;
       transform-origin: bottom;
@@ -198,7 +198,7 @@
     .carousel .control-arrow:after,
     .carousel.carousel-slider .control-arrow:after {
       position: relative;
-      background-color: #fff;
+      background-color: $colorBackground;
       width: 2px;
       height: 10px;
       content: '';

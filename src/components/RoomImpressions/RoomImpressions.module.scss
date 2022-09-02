@@ -74,10 +74,10 @@
   margin: 0;
 }
 
-$colors: '1' linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%),
-  '2' linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%),
-  '3' linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%),
-  '4' linear-gradient(180deg, #919191 0%, #3d4975 100%);
+$colors: '1' $gradientForth,
+  '2' $gradientSecondary
+  '3' $gradientMain,
+  '4' $gradientThird;
 
 .listItem {
   position: relative;
